@@ -12,6 +12,15 @@
         ml('account', '1455211');
     </script>
     <style>
+        body {
+            padding:0;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
         /* ===== MAILERLITE FORM STYLING ===== */
         #mlb2-24885190.ml-form-embedContainer {
             width: 50%;
@@ -105,8 +114,11 @@
 </head>
 <body>
     <main class="centred">
+        <img src="/images/logos/mark_clr-light.png" style="width: 80px; animation: spin 2s linear infinite; transform-origin: center;" alt="Rotating logo">
+        <p>Don't just embrace the Chaos — create it.</p>
+        <div class="spacer"></div>
         <h1>Coming soon</h1>
-        <h5>Don't just embrace the Chaos — create it.</h5>
+        <h5>Design services for indie authors.</h5>
         <div class="spacer"></div>
         <div class="container centred">
             <div class="form-intro-text" id="formIntroText">
