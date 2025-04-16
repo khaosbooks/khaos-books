@@ -3,39 +3,50 @@
 
 <head>
     <script src="scripts/head.js"></script>
-    <script>
-        (function(w,d,e,u,f,l,n){
-        w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);};
-        l=d.createElement(e);l.async=1;l.src=u;
-        n=d.getElementsByTagName(e)[0];n.parentNode.insertBefore(l,n);
-        })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-        ml('account', '1455211');
-    </script>
 </head>
 <body>
     <main class="centred">
         <h1>Coming soon</h1>
         <h5>Don't just embrace the Chaos — create it.</h5>
+        <div class="spacer"></div>
         <div class="container centred">
             <h4>Be the first to know when we launch</h4>
             <p>Sign up now to receive updates once the site is up and active.</p>
-            
-            <form id="custom-newsletter-form" class="newsletter-form" 
-            action="https://assets.mailerlite.com/jsonp/1455211/forms/dZ4kMi" method="POST" data-code="dZ4kMi">
-                <div class="form-group">
-                    <input type="text" name="fields[name]" placeholder="Name" class="form-input" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" name="fields[email]" placeholder="Email" class="form-input" required>
-                </div>
-                <input type="hidden" name="ml-submit" value="1">
-                <button type="submit" class="btn">Subscribe</button>
-            </form>
-
-            <div id="form-success" style="display:none;">
-                <h4>Thank you!</h4>
-                <p>Keep an eye out on your inbox for news and updates 😊</p>
+            <div class="form-container">
+                <form class="newsletter-form" action="https://assets.mailerlite.com/jsonp/1455211/forms/151787648004917242/subscribe" data-code="" method="post" target="_blank">
+                    <div>
+                        <div class="form-group">
+                            <input aria-label="name" type="text" class="form-input" data-inputmask="" name="fields[name]" placeholder="Name" autocomplete="given-name">
+                        </div>
+                        <div class="form-group">
+                            <input aria-label="email" aria-required="true" type="email" class="form-input" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email">
+                        </div>
+                    </div>              
+                    <input type="hidden" name="ml-submit" value="1">
+                    <div>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </div>
+                    <input type="hidden" name="anticsrf" value="true">
+                </form>
             </div>
+            <div id="form-success" style="display: none">
+                <div class="ml-form-successContent">
+                    <h4>Thanks for your interest!</h4>
+                    <p>Keep an eye out on your inbox for news and updates 😊</p>
+                </div>
+            </div>
+            
+            <script>
+              function ml_webform_success_24885190() {
+                var $ = ml_jQuery || jQuery;
+                $('.ml-subscribe-form-24885190 .row-success').show();
+                $('.ml-subscribe-form-24885190 .row-form').hide();
+              }
+            </script>
+            <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
+            <script>
+                fetch("https://assets.mailerlite.com/jsonp/1455211/forms/151787648004917242/takel")
+            </script>
         </div>
     </main>
 <script src="scripts/base.js"></script>
