@@ -3,8 +3,6 @@ document.write(`
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Forum&family=Jost:wght@400;500;700&display=swap" rel="stylesheet">
 
-<link rel="icon" href="images/logos/favicon.ico" type="image/x-icon">
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KhaosBooks</title>
