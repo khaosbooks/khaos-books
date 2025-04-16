@@ -94,6 +94,14 @@
                 width: 100% !important;
             }
         }
+        
+        /* Add this new class for the intro text container */
+        .form-intro-text {
+            transition: opacity 0.3s ease;
+        }
+        .form-intro-text.hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -102,8 +110,11 @@
         <h5>Don't just embrace the Chaos — create it.</h5>
         <div class="spacer"></div>
         <div class="container centred">
-            <h4>Be the first to know when we launch</h4>
-            <p>Sign up now to receive updates once the site is up and active.</p>
+            <!-- Wrap the intro text in a div with class -->
+            <div class="form-intro-text" id="formIntroText">
+                <h4>Be the first to know when we launch</h4>
+                <p>Sign up now to receive updates once the site is up and active.</p>
+            </div>
             
             <!-- MailerLite Form -->
             <div id="mlb2-24885190" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-24885190">
@@ -144,6 +155,8 @@
             var $ = ml_jQuery || jQuery;
             $('.ml-subscribe-form-24885190 .row-success').show();
             $('.ml-subscribe-form-24885190 .row-form').hide();
+            // Add this line to hide the intro text
+            document.getElementById('formIntroText').classList.add('hidden');
         }
     </script>
     <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
