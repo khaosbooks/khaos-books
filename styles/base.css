@@ -585,37 +585,3 @@ footer {
         align-items: center;
     }
 }
-
-
-/* ===== MAILERLITE FORMS ===== */  
-  .newsletter-form {
-    max-width: 500px;
-    width: 100%;
-  }
-  
-
-  .form-group {
-    width: 100%;
-  }
-
-  .form-input {
-    width: 100%;
-    padding: 12px 16px;
-    background-color: var(--secondary-bg);
-    border: 1px solid var(--complementary-grey);
-    color: var(--primary-text);
-    font-family: 'Jost', sans-serif;
-    border-radius: 4px;
-    transition: border-color 0.3s;
-  }
-  
-  .form-input:focus {
-    outline: none;
-    border-color: var(--accent);
-  }
-
-  #form-success {
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-  }

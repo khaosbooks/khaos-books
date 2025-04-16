@@ -1,8 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <script src="scripts/head.js"></script>
+    <!-- MailerLite Universal -->
+    <script>
+        (function(w,d,e,u,f,l,n){
+            w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);};
+            l=d.createElement(e);l.async=1;l.src=u;
+            n=d.getElementsByTagName(e)[0];n.parentNode.insertBefore(l,n);
+        })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '1455211');
+    </script>
+    <style>
+        /* ===== MAILERLITE FORM STYLING ===== */
+        #mlb2-24885190.ml-form-embedContainer {
+            width: 50%;
+            margin: 0 auto;
+            background: transparent !important;
+        }
+        
+        #mlb2-24885190.ml-form-embedContainer .ml-form-embedWrapper {
+            background: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+            box-shadow: none !important;
+        }
+        
+        #mlb2-24885190.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent {
+            display: none; /* Hide their content wrapper */
+        }
+        
+        #mlb2-24885190.ml-form-embedContainer .ml-form-fieldRow input {
+            width: 100% !important;
+            background: var(--secondary-bg) !important;
+            border: 1px solid var(--complementary-grey) !important;
+            border-radius: 4px !important;
+            padding: 12px 16px !important;
+            font-family: 'Jost', sans-serif !important;
+            color: var(--primary-text) !important;
+            margin-bottom: 16px !important;
+            transition: border 0.3s ease !important;
+        }
+        
+        #mlb2-24885190.ml-form-embedContainer .ml-form-fieldRow input:focus {
+            border-color: var(--accent) !important;
+            outline: none !important;
+        }
+        
+        #mlb2-24885190.ml-form-embedContainer .ml-form-embedSubmit {
+            margin: 0 !important;
+        }
+        
+        #mlb2-24885190.ml-form-embedContainer .ml-form-embedSubmit button {
+            background: var(--accent) !important;
+            color: var(--primary-text) !important;
+            border: none !important;
+            border-radius: 4px !important;
+            padding: 12px 24px !important;
+            font-family: 'Jost', sans-serif !important;
+            font-size: 0.8rem !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.1em !important;
+            cursor: pointer !important;
+            transition: background 0.3s ease !important;
+            width: auto !important;
+            display: inline-block !important;
+        }
+        
+        #mlb2-24885190.ml-form-embedContainer .ml-form-embedSubmit button:hover {
+            background: var(--complementary-grey) !important;
+        }
+        
+        #mlb2-24885190.ml-form-embedContainer .ml-form-successBody {
+            background: transparent !important;
+            padding: 0 !important;
+            text-align: center !important;
+        }
+        
+        #mlb2-24885190.ml-form-embedContainer .ml-form-successContent h4 {
+            font-family: 'Forum', serif !important;
+            color: var(--primary-text) !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.2em !important;
+        }
+        
+        #mlb2-24885190.ml-form-embedContainer .ml-form-successContent p {
+            font-family: 'Jost', sans-serif !important;
+            color: var(--primary-text) !important;
+        }
+        
+        @media (max-width: 768px) {
+            #mlb2-24885190.ml-form-embedContainer {
+                width: 100% !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <main class="centred">
@@ -12,43 +104,53 @@
         <div class="container centred">
             <h4>Be the first to know when we launch</h4>
             <p>Sign up now to receive updates once the site is up and active.</p>
-            <div class="form-container">
-                <form class="newsletter-form" action="https://assets.mailerlite.com/jsonp/1455211/forms/151787648004917242/subscribe" data-code="" method="post" target="_blank">
-                    <div>
-                        <div class="form-group">
-                            <input aria-label="name" type="text" class="form-input" data-inputmask="" name="fields[name]" placeholder="Name" autocomplete="given-name">
+            
+            <!-- MailerLite Form -->
+            <div id="mlb2-24885190" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-24885190">
+                <div class="ml-form-align-center">
+                    <div class="ml-form-embedWrapper embedForm">
+                        <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1455211/forms/151787648004917242/subscribe" data-code="" method="post" target="_blank">
+                                <div class="ml-form-formContent">
+                                    <div class="ml-form-fieldRow">
+                                        <input aria-label="name" type="text" name="fields[name]" placeholder="Name" autocomplete="given-name">
+                                    </div>
+                                    <div class="ml-form-fieldRow ml-last-item">
+                                        <input aria-label="email" aria-required="true" type="email" name="fields[email]" placeholder="Email" autocomplete="email">
+                                    </div>
+                                </div>
+                                <input type="hidden" name="ml-submit" value="1">
+                                <div class="ml-form-embedSubmit">
+                                    <button type="submit" class="btn">Subscribe</button>
+                                </div>
+                                <input type="hidden" name="anticsrf" value="true">
+                            </form>
                         </div>
-                        <div class="form-group">
-                            <input aria-label="email" aria-required="true" type="email" class="form-input" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email">
+                        <div class="ml-form-successBody row-success" style="display:none;">
+                            <div class="ml-form-successContent">
+                                <h4>Thanks for your interest!</h4>
+                                <p>Keep an eye out on your inbox for news and updates.</p>
+                            </div>
                         </div>
-                    </div>              
-                    <input type="hidden" name="ml-submit" value="1">
-                    <div>
-                        <button type="submit" class="btn">Subscribe</button>
                     </div>
-                    <input type="hidden" name="anticsrf" value="true">
-                </form>
-            </div>
-            <div id="form-success" style="display: none">
-                <div class="ml-form-successContent">
-                    <h4>Thanks for your interest!</h4>
-                    <p>Keep an eye out on your inbox for news and updates 😊</p>
                 </div>
             </div>
-            
-            <script>
-              function ml_webform_success_24885190() {
-                var $ = ml_jQuery || jQuery;
-                $('.ml-subscribe-form-24885190 .row-success').show();
-                $('.ml-subscribe-form-24885190 .row-form').hide();
-              }
-            </script>
-            <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
-            <script>
-                fetch("https://assets.mailerlite.com/jsonp/1455211/forms/151787648004917242/takel")
-            </script>
         </div>
     </main>
-<script src="scripts/base.js"></script>
+
+    <!-- MailerLite Scripts -->
+    <script>
+        function ml_webform_success_24885190() {
+            var $ = ml_jQuery || jQuery;
+            $('.ml-subscribe-form-24885190 .row-success').show();
+            $('.ml-subscribe-form-24885190 .row-form').hide();
+        }
+    </script>
+    <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
+    <script>
+        fetch("https://assets.mailerlite.com/jsonp/1455211/forms/151787648004917242/takel")
+    </script>
+    
+    <script src="scripts/base.js"></script>
 </body>
 </html>
