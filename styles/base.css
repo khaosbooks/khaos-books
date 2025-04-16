@@ -51,6 +51,12 @@ p {
     margin: 0 0 16px 0;
 }
 
+.ps {
+    font-style: italic;
+    font-size: 0.9em;
+    line-height: 1.4em;
+}
+
 a {
     color: var(--accent);
     text-decoration: none;
@@ -430,12 +436,23 @@ ul, ol {
     padding-left: 20px;
 }
 
-ul {
-    list-style-type: disc;
+ul { 
+    list-style-type: none;
+}
+
+ul li::marker {
+    content: "▸  ";
+}
+
+.level2 {
+    margin-bottom: 0;
+}
+.level2 li::marker {
+    content: "▹  ";
 }
 
 ol {
-    list-style-type: decimal;
+    list-style-type: decimal-leadig-zero;
 }
 
 li {
