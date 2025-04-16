@@ -3,8 +3,8 @@ injectFavicons();
 
 //LOAD BOTH HEADER AND FOOTER
 Promise.all([
-    fetch('/includes/header.html').then(res => res.text()),
-    fetch('/includes/footer.html').then(res => res.text())
+    fetch('includes/header.html').then(res => res.text()),
+    fetch('includes/footer.html').then(res => res.text())
 ])
 .then(([headerHtml, footerHtml]) => {
     document.body.insertAdjacentHTML('afterbegin', headerHtml);
@@ -20,12 +20,12 @@ Promise.all([
 // ===== FAV ICON LOCATIONS =====
 function injectFavicons() {
     const faviconHtml = `
-      <link rel="icon" type="image/png" href="/images/logos/favicon-96x96.png" sizes="96x96">
-      <link rel="icon" type="image/svg+xml" href="/images/logos/favicon.svg">
-      <link rel="shortcut icon" href="/images/logos/favicon.ico">
-      <link rel="apple-touch-icon" sizes="180x180" href="/images/logos/apple-touch-icon.png">
+      <link rel="icon" type="image/png" href="images/logos/favicon-96x96.png" sizes="96x96">
+      <link rel="icon" type="image/svg+xml" href="images/logos/favicon.svg">
+      <link rel="shortcut icon" href="images/logos/favicon.ico">
+      <link rel="apple-touch-icon" sizes="180x180" href="images/logos/apple-touch-icon.png">
       <meta name="apple-mobile-web-app-title" content="KhaosBooks">
-      <link rel="manifest" href="/images/logos/site.webmanifest">
+      <link rel="manifest" href="images/logos/site.webmanifest">
     `;
     document.head.insertAdjacentHTML('beforeend', faviconHtml);
   }
