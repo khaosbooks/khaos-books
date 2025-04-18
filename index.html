@@ -23,7 +23,7 @@
         
         /* ===== MAILERLITE FORM STYLING ===== */
         #mlb2-24885190.ml-form-embedContainer {
-            width: 50%;
+            width: 100%;
             margin: 0 auto;
             background: transparent !important;
         }
@@ -33,6 +33,7 @@
             border: none !important;
             padding: 0 !important;
             box-shadow: none !important;
+            width: 100% !important;
         }
         
         #mlb2-24885190.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent {
@@ -40,14 +41,13 @@
         }
         
         #mlb2-24885190.ml-form-embedContainer .ml-form-fieldRow input {
-            width: 100% !important;
+            width: 90%;
             max-width: 400px;
             background: var(--secondary-bg) !important;
             border: 1px solid var(--complementary-grey) !important;
             border-radius: 4px !important;
             font-family: 'Jost', sans-serif !important;
             color: var(--primary-text) !important;
-            margin-bottom: 16px !important;
             transition: border 0.3s ease !important;
         }
         
@@ -98,7 +98,7 @@
             color: var(--primary-text) !important;
         }
         
-        @media (max-width: 768px) {
+        @media (max-width: 992) {
             #mlb2-24885190.ml-form-embedContainer {
                 width: 100% !important;
             }
@@ -114,13 +114,12 @@
 </head>
 <body>
     <main class="centred">
-        <img src="/images/logos/mark_clr-light.png" style="width: 80px; animation: spin 2s linear infinite; transform-origin: center;" alt="Rotating logo">
-        <p>Don't just embrace the Chaos — create it.</p>
-        <div class="spacer"></div>
+        <img src="/images/logos/mark_clr-light.png" style="width: 80px; animation: spin 4s linear infinite; transform-origin: center;" alt="Rotating logo">
+        <h5>Don't just embrace the Chaos — create it.</h5>
         <h1>Coming soon</h1>
-        <h5>Design services for indie authors.</h5>
-        <div class="spacer"></div>
-        <div class="container centred">
+        <p>Services and resources for indie authors</p>
+        <div>
+            <div class="spacer"></div>
             <div class="form-intro-text" id="formIntroText">
                 <h4>Be the first to know when we launch</h4>
                 <p>Sign up now to receive updates once the site is up and active.</p>

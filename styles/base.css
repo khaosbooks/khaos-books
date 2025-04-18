@@ -21,6 +21,7 @@ body {
     min-height: 100%;
     margin: 0;
     padding: 0;
+    font-size: 18px;
 }
 
 main { flex: 1;}
@@ -34,11 +35,12 @@ h1, h2, h3, h4 {
     line-height: 1em;
 }
 
-h1 { font-size: 4rem; text-align: center;}
-h2 { font-size: 3rem; }
-h3 { font-size: 2rem; }
-h4 { font-size: 1.5rem; }
+h1 { font-size: 4em; text-align: center;}
+h2 { font-size: 3em; }
+h3 { font-size: 2em; }
+h4 { font-size: 1.5em; }
 h5 { font-size: 1em; 
+    font-family: 'Jost', sans-serif;
     text-align: center; 
     color:var(--accent);
     text-transform: uppercase;
@@ -71,12 +73,8 @@ a:not(.logo):not(.nav-link):not(.dropdown-link):not(.social-links a):not(.kofi-b
     padding:40px;
 }
 
-.container {
-    padding: 40px 4% 0px;
-}
-
 .centred {
-    padding: 40px 4% 0px;
+    padding: 2em 4em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -130,14 +128,22 @@ a:not(.logo):not(.nav-link):not(.dropdown-link):not(.social-links a):not(.kofi-b
 
 .logo-text {
     font-family: 'Forum', serif;
-    font-size: 1.8rem;
+    font-size: 1.6em;
     color: var(--primary-text);
     display: flex;
     align-items: center;
 }
 
+.logo-text:hover {
+    color: var(--accent)
+}
+
 .logo-accent {
     color: var(--accent);
+}
+
+.logo-text:hover .logo-accent {
+    color: var(--primary-text)
 }
 
 .nav-menu {
@@ -154,6 +160,10 @@ a:not(.logo):not(.nav-link):not(.dropdown-link):not(.social-links a):not(.kofi-b
 .nav-item {
     position: relative;
     margin-left: 24px;
+}
+
+.nav-item::marker {
+    content: none;
 }
 
 .mobile-menu-group {
@@ -207,9 +217,9 @@ a:not(.logo):not(.nav-link):not(.dropdown-link):not(.social-links a):not(.kofi-b
     text-align: center;
 }
 
-.mobile-menu-group:hover .dropdown {
+.mobile-menu-group:active .dropdown {
     opacity: 1;
-    visibility: visible;
+    visibility: visible; 
 }
 
 .mobile-menu-group:hover .dropdown-arrow {
@@ -237,6 +247,10 @@ a:not(.logo):not(.nav-link):not(.dropdown-link):not(.social-links a):not(.kofi-b
 .dropdown-link:hover {
     color: var(--accent);
     background-color: var(--complementary-grey);
+}
+
+.dropdown-link::marker {
+    content: none;
 }
 
 .nav-discord {
@@ -312,7 +326,7 @@ a:not(.logo):not(.nav-link):not(.dropdown-link):not(.social-links a):not(.kofi-b
         flex-direction: column;
         background-color: var(--secondary-bg);
         width: 50%;
-        min-width: 200px;
+        min-width: 160px;
         transition: right 0.3s;
         padding: 0;
         box-shadow: 0 0 8px var(--secondary-bg);
@@ -321,7 +335,7 @@ a:not(.logo):not(.nav-link):not(.dropdown-link):not(.social-links a):not(.kofi-b
     }
     
     .nav-menu.active {
-        right: 4%;
+        right: 4em;
     }
     
     .nav-item {
@@ -393,7 +407,7 @@ a:not(.logo):not(.nav-link):not(.dropdown-link):not(.social-links a):not(.kofi-b
     border-radius: 4px;
     cursor: pointer;
     font-family: 'Jost', sans-serif;
-    font-size: 1rem;
+    font-size: 1em;
     text-transform: uppercase;
     transition: background-color 0.3s;    
     align-items: center;
