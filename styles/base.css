@@ -1,3 +1,9 @@
+/* DEBUG
+* {
+    outline: 1px solid red !important;
+}
+*/ 
+
 /* ===== BASE VARIABLES ===== */
 :root {
     /* Colours */
@@ -347,15 +353,16 @@ a:not(.logo):not(.nav-link):not(.dropdown-link):not(.social-links a):not(.kofi-b
     }
     
     .nav-menu {
+        background-color: aqua;
         position: fixed;
         right: -100%;
         top: var(--xxl);
         flex-direction: column;
         background-color: var(--secondary-bg);
-        width: 50%;
+        width: 60%;
         min-width: 300px;
         transition: var(--transition);
-        padding: 0;
+        padding: 0 !important;
         box-shadow: var(--box-shadow-default);
         border-top: var(--border-thick);
         overflow-y: auto;
@@ -370,6 +377,7 @@ a:not(.logo):not(.nav-link):not(.dropdown-link):not(.social-links a):not(.kofi-b
         margin: 0;
         width: 100%;
         border-bottom: var(--border-thin);
+        padding: 0 !important;
     }
 
     .nav-link {
@@ -398,7 +406,6 @@ a:not(.logo):not(.nav-link):not(.dropdown-link):not(.social-links a):not(.kofi-b
         padding: 0;
         margin: 0;
         text-align: left; 
-
         display: none !important;
         height: 0 !important;
         overflow: hidden !important;
@@ -428,8 +435,8 @@ a:not(.logo):not(.nav-link):not(.dropdown-link):not(.social-links a):not(.kofi-b
     .btn {
         width: auto;
         justify-content: flex-start;
-        margin: 0;
-        padding: 0.75rem 1rem !important;
+        margin: var(--sm) 0;
+        padding: var(--padding-btn);
     }
 
     .with-arrow {
