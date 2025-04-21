@@ -32,7 +32,6 @@ function injectFavicons() {
 }
 
 // ===== HEADER INITIALIZATION ===== 
-// ===== HEADER INITIALIZATION ===== 
 function initializeHeader() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
