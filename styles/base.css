@@ -44,6 +44,15 @@
     --padding-btn: var(--sm) var(--md);
 }
 
+html {
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 /* ===== BODY STYLES (ALL SCREENS) ===== */
 body {
     font-family: var(--font-body);
@@ -54,6 +63,10 @@ body {
     min-height: 100vh;
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
 }
 
 main { flex: 1;}
@@ -104,6 +117,9 @@ a:not(.logo):not(.nav-link):not(.dropdown-link):not(.social-links a):not(.kofi-b
 
 .container {
     padding: var(--xxxl);
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
 }
 
 .centred {
@@ -113,6 +129,18 @@ a:not(.logo):not(.nav-link):not(.dropdown-link):not(.social-links a):not(.kofi-b
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+
+/* ===== MOBILE FOR ALL PAGES ===== */
+@media (max-width: 900px) {
+    .container {
+        padding: var(--xl);
+    }
+
+    img, iframe, video {
+        max-width: 100%;
+        height: auto;
+    }
 }
 
 /* ===== HEADER STYLES (DESKTOP) ===== */
@@ -532,12 +560,8 @@ footer {
     border-top: var(--border-thin);
     padding: var(--xl) 0 var(--md);
     box-shadow: var(--shadow-reverse);
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .footer-grid {
@@ -651,6 +675,7 @@ footer {
     .footer-grid {
         grid-template-columns: 1fr;
         text-align: center;
+        margin: 0;
     }
     
     .footer-nav,
