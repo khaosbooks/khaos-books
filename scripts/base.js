@@ -30,7 +30,6 @@ function injectFavicons() {
 // ===== COMPONENT LOADING =====
 async function loadComponents() {
     try {
-        if (!window.location.pathname.endsWith('index.html')) { //remove this line once site is live
         const [headerHtml, footerHtml] = await Promise.all([
             fetch('includes/header.html').then(res => res.text()),
             fetch('includes/footer.html').then(res => res.text())
@@ -41,10 +40,7 @@ async function loadComponents() {
         
         initializeHeader();
         initializeFooter();
-    } //remove thisline once site is live
 
-        initializeMailerLite();
-        
         document.body.classList.add('components-loaded');
     } catch (error) {
         console.error('Error loading components:', error);
@@ -173,54 +169,3 @@ document.addEventListener('DOMContentLoaded', () => {
     loadHeadContent();
     loadComponents();
 });
-
-// ===== MAILERLITE =====
-function initializeMailerLite() {
-    const form = document.getElementById('custom-newsletter-form');
-    if (!form) return;
-
-    // Wait for MailerLite to load
-    if (typeof ml_account === 'undefined') {
-        const script = document.createElement('script');
-        script.src = 'https://assets.mailerlite.com/js/universal.js';
-        script.async = true;
-        script.onload = () => {
-            ml('account', '1455211');
-            initMailerLiteForm();
-        };
-        document.head.appendChild(script);
-    } else {
-        initMailerLiteForm();
-    }
-}
-
-// Form handling
-function initMailerLiteForm() {
-    const form = document.getElementById('custom-newsletter-form');
-    if (!form) return;
-    
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        ml_account('webforms', '1455211', form.dataset.code, 'submit');
-        
-        fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
-        })
-        .then(response => {
-            if (response.ok) {
-                form.style.display = 'none';
-                document.getElementById('form-success').style.display = 'block';
-                ml_account('webforms', '1455211', form.dataset.code, 'show');
-            }
-        })
-        .catch(() => {
-            form.submit();
-        });
-    });
-
-    fetch("https://assets.mailerlite.com/jsonp/1455211/forms/151787648004917242/takel")
-        .catch(e => console.debug("MailerLite preflight (non-critical)", e));
-}
