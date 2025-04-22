@@ -32,3 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
     loadHeadContent();
     loadComponents();
 });
+
+
+// ===== HIDE CTA TEXT ON FORM SUBMIT
+document.addEventListener('ml-subscribe-event', function(event) {
+    if (event.detail.formId === '24885190') { // Your form ID
+        const introText = document.getElementById('formIntroText');
+        if (introText) introText.style.display = 'none';
+    }
+});
