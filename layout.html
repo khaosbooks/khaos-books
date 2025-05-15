@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="scripts/base.js"></script>
+    <script src="scripts/main.js"></script>
 </head>
 <body>
     <main class="container">
@@ -12,7 +12,17 @@
         <p>This is a paragraph of text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. This is a paragraph of text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
         <p>This is a paragraph of text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
         <p class="ps">This is a paragraph of text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
-        <div class="spacer"></div>
+    </section>
+
+    <div class="tabs-nav">
+        <button class="tab-link active" data-tab="content1">Content</button>
+        <button class="tab-link" data-tab="content2">Cards</button>
+        <button class="tab-link" data-tab="content3">Lists</button>
+    </div>
+
+
+    <div id="content1" class="tab-content active">
+    <section>
         <h3>Subsection Heading</h3>
         <p>Another paragraph with some <a href="#">link text</a> in it.</p>
         <div class="spacer"></div>
@@ -20,7 +30,9 @@
         <p>Smaller section of content.</p>
         <h5>Don't just embrace the chaos - create it</h5>
     </section>
-        
+    </div>
+
+    <div id="content2" class="tab-content">
     <section>
         <div class="grid">
             <div class="card">
@@ -40,10 +52,11 @@
             </div>
         </div>
     </section>
+    </div>
 
+    <div id="content3" class="tab-content">
     <section>
         <h2>Lists</h2>
-        
         <div class="grid">
             <div>
                 <h3>Unordered List</h3>
@@ -61,6 +74,8 @@
             </div>
         </div>
     </section>
+    </div>
+
 </main>
 </body>
 </html>
