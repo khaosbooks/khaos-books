@@ -112,7 +112,7 @@ html {
 
 .theme-toggle__thumb {
     position: absolute;
-    top: 50%;
+    top: 51%;
     left: var(--xxs);
     transform: translateY(-50%);
     width: var(--thumb-size);
@@ -565,7 +565,7 @@ a:not(.logo):not(.nav-link):not(.dropdown-link):not(.social-links a):not(.kofi-b
     display: inline-flex;
     padding: var(--padding-btn);
     background-color: var(--accent);
-    color: var(--primary-text) !important;
+    color: #CCCCCC !important;
     border: none;
     border-radius: var(--radius-sm);
     cursor: pointer;
@@ -579,15 +579,16 @@ a:not(.logo):not(.nav-link):not(.dropdown-link):not(.social-links a):not(.kofi-b
 
 .btn:hover {
     background-color: var(--complementary-grey) !important;
+    color: var(--accent) !important;
 }
 
 .btn-secondary {
-    background-color: var(--primary-bg);
+    background-color: var(--complementary-grey);
     border: var(--border-thin);
 }
 
 .btn-secondary:hover {
-    background-color: var(--complementary-grey);
+    background-color: var(--primary-bg) !important;
 }
 
 .card {

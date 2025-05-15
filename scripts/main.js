@@ -143,68 +143,6 @@ function initializeHeader() {
     }
 }
 
-// ===== THEME TOGGLES =====
-document.addEventListener('DOMContentLoaded', () => {
-    const themeToggle = document.querySelector('.theme-toggle__btn');
-    const html = document.documentElement;
-    const logo = document.querySelector('.logo-mark');
-    
-    const themeAssets = {
-    logo: {
-      light: 'images/logos/mark_clr-light.png',
-      dark: 'images/logos/mark_clr-dark.png'
-    },
-    icons: {
-      discord: {
-        light: 'images/logos/icon-discord-light.svg',
-        dark: 'images/logos/icon-discord-dark.svg'
-      },
-      tiktok: {
-        light: 'images/logos/icon-tiktok-light.svg',
-        dark: 'images/logos/icon-tiktok-dark.svg'
-      },
-      twitch: {
-        light: 'images/logos/icon-twitch-light.svg',
-        dark: 'images/logos/icon-twitch-dark.svg'
-      },
-      reddit: {
-        light: 'images/logos/icon-reddit-light.svg',
-        dark: 'images/logos/icon-reddit-dark.svg'
-      }
-    }
-    };
-
-    function applyTheme(theme) {
-    html.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-
-    if (logo) logo.src = themeAssets.logo[theme];
-
-    socialIcons.forEach(icon => {
-      const iconType = icon.src.includes('discord') ? 'discord' :
-                     icon.src.includes('tiktok') ? 'tiktok' : 'twitch';
-      icon.src = themeAssets.icons[iconType][theme];
-    });
-  }
-
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const savedTheme = localStorage.getItem('theme');
-    const systemTheme = prefersDark ? 'dark' : 'light';
-    const initialTheme = savedTheme || systemTheme;
-    
-    html.setAttribute('data-theme', initialTheme);
-    
-    // Toggle function
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = html.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        html.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-    });
-});
-
-
 // ===== TABS AND SECTIONS =====
 document.addEventListener('DOMContentLoaded', () => {
     const tabLinks = document.querySelectorAll('.tab-link');
@@ -243,6 +181,70 @@ function initializeFooter() {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+    });
+        initThemeToggle();
+}
+
+function initThemeToggle() {
+    const themeToggle = document.querySelector('.theme-toggle__btn');
+    const html = document.documentElement;
+    const logos = document.querySelectorAll('.logo-mark');
+    const socialIcons = document.querySelectorAll('.social-icon');
+    
+    const themeAssets = {
+        logo: {
+            dark: 'images/logos/mark_clr-light.png',
+            light: 'images/logos/mark_clr-dark.png'
+        },
+        icons: {
+            discord: {
+                dark: 'images/logos/icon-discord-light.svg',
+                light: 'images/logos/icon-discord-dark.svg'
+            },
+            tiktok: {
+                dark: 'images/logos/icon-tiktok-light.svg',
+                light: 'images/logos/icon-tiktok-dark.svg'
+            },
+            twitch: {
+                dark: 'images/logos/icon-twitch-light.svg',
+                light: 'images/logos/icon-twitch-dark.svg'
+            },
+            reddit: {
+                dark: 'images/logos/icon-reddit-light.svg',
+                light: 'images/logos/icon-reddit-dark.svg'
+            }
+        }
+    };
+
+    function applyTheme(theme) {
+        html.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+
+        logos.forEach(logo => {
+            logo.src = themeAssets.logo[theme];
+        });
+
+        socialIcons.forEach(icon => {
+            const iconType = icon.src.includes('discord') ? 'discord' :
+                           icon.src.includes('tiktok') ? 'tiktok' : 
+                           icon.src.includes('twitch') ? 'twitch' : 
+                           icon.src.includes('reddit') ? 'reddit' : null;
+            if (iconType) {
+                icon.src = themeAssets.icons[iconType][theme];
+            }
+        });
+    }
+
+    // Initialize theme
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem('theme');
+    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+    applyTheme(initialTheme);
+    
+    themeToggle?.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        applyTheme(newTheme);
     });
 }
 
