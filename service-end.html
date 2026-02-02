@@ -80,8 +80,7 @@
                 
                 <!-- Section 3: Testimonial & Portfolio -->
                 <div class="form-section">
-                    <h3>Testimonial & Portfolio</h3>
-                    
+                    <h3>Testimonial</h3>                    
                     <div class="form-group">
                         <label>How would you rate your overall experience?</label>
                         <div class="star-rating-container">
@@ -106,33 +105,26 @@
                             <span class="star-rating-value">Hover over stars to see ratings</span>
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label for="testimonial">Your Testimonial</label>
                         <textarea id="testimonial" name="testimonial" class="form-textarea" placeholder="Please share your experience working with KhaosBooks. This may be featured on our website and social media."></textarea>
                         <span class="form-note">What you write here may be used as a public testimonial</span>
                     </div>
-                    
-                    <div class="form-group">
-                        <div class="checkbox-group">
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="portfolio-consent" name="portfolioConsent" value="yes">
-                                <label for="portfolio-consent">I grant KhaosBooks permission to display this work in their portfolio and marketing materials</label>
-                            </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Portfolio</h3>
+                    <p>When you signed the contract, you had granted permission for your work to be shared in our portfolio and in online spots. Please confirm so now for connections.</p>
+
+                    <div class="delay-fields">
+                        <div class="form-group">
+                            <label for="portfolioDelayDate">Do not display before</label>
+                            <input type="date" id="portfolioDelayDate" name="portfolioDelayDate" class="form-input">
                         </div>
-                    </div>
-                    
-                    <div class="conditional-field" id="portfolioDelaySection">
-                        <div class="delay-fields">
-                            <div class="form-group">
-                                <label for="portfolioDelayDate">Do not display before</label>
-                                <input type="date" id="portfolioDelayDate" name="portfolioDelayDate" class="form-input">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="portfolioDelayReason">Reason for delay</label>
-                                <input type="text" id="portfolioDelayReason" name="portfolioDelayReason" class="form-input" placeholder="Brief reason for delay">
-                            </div>
+                        
+                        <div class="form-group">
+                            <label for="portfolioDelayReason">Reason for delay</label>
+                            <input type="text" id="portfolioDelayReason" name="portfolioDelayReason" class="form-input" placeholder="Brief reason for delay">
                         </div>
                     </div>
                     
