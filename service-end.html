@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="scripts/main-coming-soon.js"></script>
+    <link rel="stylesheet" href="/styles/main.css">
+    <meta charset="UTF-8">
+    <title>Project Feedback Form | KhaosBooks Services</title>
+    <meta name="description" content="Share your feedback about your completed project with KhaosBooks">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <main class="container">
+        <section class="feedback-form">
+            <h1>Project Feedback Form</h1>
+            <p class="centred">Thank you for choosing to work with me to get your book done! Now that our project is complete, I have some questions for you, if you don't mind. None of these are a reqruiement, but would be much appreciated.</p>
+            <p class="centred" style="margin-bottom: var(--xxl);">It was a pleasure working with you.</p>
+            
+            <form action="https://formsubmit.co/YOUR-EMAIL-HERE" method="POST" id="projectFeedbackForm">
+                <!-- FormSubmit.co Configuration -->
+                <input type="hidden" name="_subject" value="New Project Feedback Received">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="#confirmation">
+                <input type="checkbox" name="_honeypot" style="display: none !important;" tabindex="-1" autocomplete="off">
+                
+                <!-- Section 1: Project & Contact Information -->
+                <div class="form-section">
+                    <h3>Project Information</h3>
+                    
+                    <div class="form-group">
+                        <label>What did we work on together?</label>
+                        <div class="service-selector">
+                            <label class="service-option">
+                                <input type="radio" name="serviceType" value="cover-design">
+                                <span class="service-name">Cover Design</span>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="serviceType" value="interior-formatting">
+                                <span class="service-name">Interior Formatting</span>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="serviceType" value="map-design">
+                                <span class="service-name">Map Design</span>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="serviceType" value="character-art">
+                                <span class="service-name">Character Art</span>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="serviceType" value="custom-art">
+                                <span class="service-name">Custom Art</span>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="serviceType" value="other-service">
+                                <span class="service-name">Other Service</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="projectName">Book/Project Title</label>
+                        <input type="text" id="projectName" name="projectName" class="form-input">
+                        <span class="form-note">The title of the book or project we worked on together</span>
+                    </div>
+                    
+                    <div class="contact-fields">
+                        <div class="form-group">
+                            <label for="clientName">Your Name/Pen Name</label>
+                            <input type="text" id="clientName" name="clientName" class="form-input">
+                            <span class="form-note">This will be used to credit your testimonial</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="clientEmail">Your Email</label>
+                            <input type="email" id="clientEmail" name="clientEmail" class="form-input">
+                            <span class="form-note">I'll use this only to connect your feedback to your project</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Section 3: Testimonial & Portfolio -->
+                <div class="form-section">
+                    <h3>Testimonial & Portfolio</h3>
+                    
+                    <div class="form-group">
+                        <label>How would you rate your overall experience?</label>
+                        <div class="star-rating-container">
+                            <div class="star-rating">
+                                <input type="radio" id="star5" name="overallRating" value="5">
+                                <label for="star5" title="Excellent"></label>
+                                
+                                <input type="radio" id="star4" name="overallRating" value="4">
+                                <label for="star4" title="Very Good"></label>
+                                
+                                <input type="radio" id="star3" name="overallRating" value="3">
+                                <label for="star3" title="Good"></label>
+                                
+                                <input type="radio" id="star2" name="overallRating" value="2">
+                                <label for="star2" title="Okay"></label>
+                                
+                                <input type="radio" id="star1" name="overallRating" value="1">
+                                <label for="star1" title="Poor"></label>
+                            </div>
+                        </div>
+                        <div class="star-rating-tooltip">
+                            <span class="star-rating-value">Hover over stars to see ratings</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="testimonial">Your Testimonial</label>
+                        <textarea id="testimonial" name="testimonial" class="form-textarea" placeholder="Please share your experience working with KhaosBooks. This may be featured on our website and social media."></textarea>
+                        <span class="form-note">What you write here may be used as a public testimonial</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="portfolio-consent" name="portfolioConsent" value="yes">
+                                <label for="portfolio-consent">I grant KhaosBooks permission to display this work in their portfolio and marketing materials</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="conditional-field" id="portfolioDelaySection">
+                        <div class="delay-fields">
+                            <div class="form-group">
+                                <label for="portfolioDelayDate">Do not display before</label>
+                                <input type="date" id="portfolioDelayDate" name="portfolioDelayDate" class="form-input">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="portfolioDelayReason">Reason for delay</label>
+                                <input type="text" id="portfolioDelayReason" name="portfolioDelayReason" class="form-input" placeholder="Brief reason for delay">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="socialTags">Social media handles to tag (if shared):</label>
+                        <input type="text" id="socialTags" name="socialTags" class="form-input" placeholder="@twitter @instagram @website">
+                        <span class="form-note">Separate with spaces. I'll tag you if I share your project!</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="promotionPlaces">Where should I keep an eye out if you promote my work?</label>
+                        <textarea id="promotionPlaces" name="promotionPlaces" class="form-textarea" placeholder="Specific social platforms, websites, newsletters, etc."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="progress-shots" name="progressShots" value="yes">
+                                <label for="progress-shots">Yes, you may share progress shots and variations as case studies</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="shop-feature" name="shopFeature" value="yes">
+                                <label for="shop-feature">Yes, you may feature my book in the site's online shop (coming soon)</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Section 4: Service Improvement -->
+                <div class="form-section">
+                    <h3>Service Improvement</h3>
+                    
+                    <div class="form-group">
+                        <label for="initialGoal">What was your initial goal/reason for seeking me out?</label>
+                        <textarea id="initialGoal" name="initialGoal" class="form-textarea" placeholder="What were you hoping to achieve when you first reached out?"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="outcomeMatch">Did the final result match or exceed your expectations?</label>
+                        <textarea id="outcomeMatch" name="outcomeMatch" class="form-textarea" placeholder="How did the final work compare to what you originally envisioned?"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="improvementSuggestions">Any suggestions for anything I could improve?</label>
+                        <textarea id="improvementSuggestions" name="improvementSuggestions" class="form-textarea" placeholder="What could make my services even better for future clients?"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="futureServices">Would you consider working with me again or recommending my services?</label>
+                        <textarea id="futureServices" name="futureServices" class="form-textarea" placeholder="Your honest thoughts about future collaboration or referrals"></textarea>
+                    </div>
+                </div>
+                
+                <!-- Section 5: Final Thoughts -->
+                <div class="form-section">
+                    <h3>Final Thoughts</h3>
+                    
+                    <div class="form-group">
+                        <label for="keepInTouch">Would you like to stay in touch?</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+                                <label for="newsletter">Yes, add me to your occasional newsletter</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="no-contact" name="noContact" value="yes">
+                                <label for="no-contact">No, please don't contact me unless I reach out</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="finalMessage">Any final message or thank you note? (Optional but appreciated!)</label>
+                        <textarea id="finalMessage" name="finalMessage" class="form-textarea" placeholder="Share any final thoughts, appreciation, or messages"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="dataConsent" name="dataConsent" value="yes">
+                                <label for="dataConsent">I understand that my feedback will be stored securely and used solely for service improvement and, where permission is granted, for testimonials and portfolio display.</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Submit Button -->
+                <div class="form-submit">
+                    <button type="submit" class="btn" style="padding: var(--md) var(--xxl); font-size: var(--md);">
+                        Submit Feedback
+                    </button>
+                    <p class="ps" style="margin-top: var(--sm);">Thank you for taking the time to help me improve!</p>
+                </div>
+            </form>
+            
+            <!-- Confirmation Message (shown after form submission) -->
+            <div id="confirmation" class="confirmation-message">
+                <h2>Thank You!</h2>
+                <p>Your feedback has been received and is greatly appreciated. I value your input and will use it to continue improving my services.</p>
+                <p>If you granted permission for portfolio use, I'll be in touch if I have any questions about displaying your project.</p>
+                <p>Wishing you all the best with your book/project!</p>
+                <a href="/" class="btn" style="margin-top: var(--md);">Return to Home</a>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('projectFeedbackForm');
+            const confirmationMessage = document.getElementById('confirmation');
+            const portfolioConsent = document.getElementById('portfolio-consent');
+            const portfolioDelaySection = document.getElementById('portfolioDelaySection');
+            const starRatingValue = document.querySelector('.star-rating-value');
+            
+            // Handle portfolio delay fields visibility
+            portfolioConsent.addEventListener('change', function() {
+                if (!this.checked) {
+                    portfolioDelaySection.classList.add('active');
+                } else {
+                    portfolioDelaySection.classList.remove('active');
+                }
+            });
+            
+            // Initialize - show delay section if portfolio consent is unchecked
+            if (!portfolioConsent.checked) {
+                portfolioDelaySection.classList.add('active');
+            }
+            
+            // Optional: Auto-check "no contact" if newsletter is unchecked
+            const newsletter = document.getElementById('newsletter');
+            const noContact = document.getElementById('no-contact');
+            
+            newsletter.addEventListener('change', function() {
+                if (!this.checked) {
+                    noContact.checked = true;
+                }
+            });
+            
+            noContact.addEventListener('change', function() {
+                if (this.checked) {
+                    newsletter.checked = false;
+                }
+            });
+            
+            // Service selector visual feedback
+            const serviceOptions = document.querySelectorAll('.service-option');
+            serviceOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    serviceOptions.forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    this.classList.add('selected');
+                });
+            });
+            
+            // Star rating hover feedback
+            const starLabels = document.querySelectorAll('.star-rating label');
+            starLabels.forEach(label => {
+                label.addEventListener('mouseenter', function() {
+                    const title = this.getAttribute('title');
+                    starRatingValue.textContent = title;
+                    starRatingValue.classList.add('active');
+                });
+                
+                label.addEventListener('mouseleave', function() {
+                    const selectedStar = document.querySelector('.star-rating input:checked');
+                    if (selectedStar) {
+                        const selectedLabel = document.querySelector(`label[for="${selectedStar.id}"]`);
+                        starRatingValue.textContent = selectedLabel.getAttribute('title');
+                    }
+                });
+            });
+            
+            // Star rating selection feedback
+            const starInputs = document.querySelectorAll('.star-rating input');
+            starInputs.forEach(input => {
+                input.addEventListener('change', function() {
+                    const selectedLabel = document.querySelector(`label[for="${this.id}"]`);
+                    starRatingValue.textContent = selectedLabel.getAttribute('title');
+                    starRatingValue.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
