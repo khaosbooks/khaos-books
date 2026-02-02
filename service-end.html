@@ -16,14 +16,12 @@
             <p class="centred" style="margin-bottom: var(--xxl);">It was a pleasure working with you.</p>
             
             <form action="https://formsubmit.co/afc3ca6ee4bfab02e111bb00c16e3a9f" method="POST" id="projectFeedbackForm">
-                <!-- FormSubmit.co Configuration -->
                 <input type="hidden" name="_subject" value="New Project Feedback Received">
                 <input type="hidden" name="_template" value="table">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_next" value="http://khaosbooks.com/service-end-confirm">
                 <input type="checkbox" name="_honeypot" style="display: none !important;" tabindex="-1" autocomplete="off">
                 
-                <!-- Section 1: Project & Contact Information -->
                 <div class="form-section">
                     <h3>Project Information</h3>
                     
@@ -78,7 +76,6 @@
                     </div>
                 </div>
                 
-                <!-- Section 3: Testimonial & Portfolio -->
                 <div class="form-section">
                     <h3>Testimonial</h3>                    
                     <div class="form-group">
@@ -158,7 +155,6 @@
                     </div>
                 </div>
                 
-                <!-- Section 4: Service Improvement -->
                 <div class="form-section">
                     <h3>Service Improvement</h3>
                     
@@ -183,7 +179,6 @@
                     </div>
                 </div>
                 
-                <!-- Section 5: Final Thoughts -->
                 <div class="form-section">
                     <h3>Final Thoughts</h3>
                     
@@ -209,14 +204,13 @@
                     <div class="form-group">
                         <div class="checkbox-group">
                             <div class="checkbox-item">
-                                <input type="checkbox" id="dataConsent" name="dataConsent" value="yes">
-                                <label for="dataConsent">I understand that my feedback will be stored securely and used solely for service improvement and, where permission is granted, for testimonials and portfolio display.</label>
+                                <input type="checkbox" id="dataConsent" name="dataConsent" value="yes" required>
+                                <label for="dataConsent">I understand that my feedback will be stored securely and used solely for service improvement and, where permission is granted, for testimonials and portfolio display. <span class="required">*</span></label>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Submit Button -->
                 <div class="form-submit">
                     <button type="submit" class="btn" style="padding: var(--md) var(--xxl); font-size: var(--md);">
                         Submit Feedback
