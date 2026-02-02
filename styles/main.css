@@ -991,7 +991,6 @@ footer {
 }
 
 .confirmation-message {
-    display: none;
     background-color: var(--secondary-bg);
     border-radius: var(--md);
     padding: var(--xl);
