@@ -30,5 +30,4 @@ function injectFavicons() {
 // ===== INITIALIZATION =====
 document.addEventListener('DOMContentLoaded', () => {
     loadHeadContent();
-    loadComponents();
 });
