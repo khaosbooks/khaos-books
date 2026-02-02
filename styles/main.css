@@ -1117,10 +1117,10 @@ footer {
 
 .radio-item label {
     margin-bottom: 0;
-    text-transform: none;
-    letter-spacing: normal;
+    text-transform: none !important;
+    letter-spacing: normal !important;
     cursor: pointer;
-    font-size: inherit;
+    font-size: var(--m);
 }
 
 @keyframes fadeIn {
