@@ -221,44 +221,6 @@
         </section>
     </main>
     
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('projectFeedbackForm');
-            const confirmationMessage = document.getElementById('confirmation');
-            const portfolioConsent = document.getElementById('portfolio-consent');
-            const portfolioDelaySection = document.getElementById('portfolioDelaySection');
-            const starRatingValue = document.querySelector('.star-rating-value');
-            
-
-            
-            // Star rating hover feedback
-            const starLabels = document.querySelectorAll('.star-rating label');
-            starLabels.forEach(label => {
-                label.addEventListener('mouseenter', function() {
-                    const title = this.getAttribute('title');
-                    starRatingValue.textContent = title;
-                    starRatingValue.classList.add('active');
-                });
-                
-                label.addEventListener('mouseleave', function() {
-                    const selectedStar = document.querySelector('.star-rating input:checked');
-                    if (selectedStar) {
-                        const selectedLabel = document.querySelector(`label[for="${selectedStar.id}"]`);
-                        starRatingValue.textContent = selectedLabel.getAttribute('title');
-                    }
-                });
-            });
-            
-            // Star rating selection feedback
-            const starInputs = document.querySelectorAll('.star-rating input');
-            starInputs.forEach(input => {
-                input.addEventListener('change', function() {
-                    const selectedLabel = document.querySelector(`label[for="${this.id}"]`);
-                    starRatingValue.textContent = selectedLabel.getAttribute('title');
-                    starRatingValue.classList.add('active');
-                });
-            });
-        });
-    </script>
+    <script src="/scripts/forms.js"></script>
 </body>
 </html>

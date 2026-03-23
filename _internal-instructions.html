@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KhaosBooks - Workflow Instructions</title>
+</head>
+<body>
+    <h2>QUICK REFERENCE</h2>
+    <h2>🎯 REMEMBER</h2>
+    <ul>
+        <li>✅ Always check bottom-left before coding</li>
+        <li>✅ Test on dev URL before merging</li>
+        <li>✅ Live site only updates after merge</li>
+        <li>✅ When in doubt, commit and push early!</li>
+    </ul>
+    <hr>
+
+    <table cellpadding="8">
+        <tr>
+            <th>Branch</th>
+            <th>What It's For</th>
+            <th>URL</th>
+        </tr>
+        <tr>
+            <td><strong>dev</strong></td>
+            <td>Building new stuff</td>
+            <td><a href="https://dev--khaosbooks.netlify.app">https://dev--khaosbooks.netlify.app</a></td>
+        </tr>
+        <tr>
+            <td><strong>main</strong></td>
+            <td>Live production site</td>
+            <td><a href="https://khaosbooks.com">https://khaosbooks.com</a></td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>DAILY WORKFLOW (Coding on dev branch)</h2>
+
+    <h3>Step 1: Start Working</h3>
+    <ul>
+        <li>Open VSCode</li>
+        <li>Check bottom-left corner - does it say <strong>dev</strong>?
+            <ul>
+                <li>If yes → continue</li>
+                <li>If no → click it and select <strong>dev</strong></li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Step 2: Make Changes</h3>
+    <ul>
+        <li>Edit files as needed</li>
+        <li>Save everything (Ctrl+S)</li>
+    </ul>
+
+    <h3>Step 3: Push to GitHub (deploys to dev site)</h3>
+    <ul>
+        <li>Click Source Control icon (or Ctrl+Shift+G)</li>
+        <li>Type a commit message (what did you change?)</li>
+        <li>Click ✓ (Commit)</li>
+        <li>Click Sync/Push button</li>
+    </ul>
+
+    <h3>Step 4: View on Dev Site</h3>
+    <ul>
+        <li>Wait 2 minutes</li>
+        <li>Visit: <a href="https://dev--khaosbooks.netlify.app">https://dev--khaosbooks.netlify.app</a></li>
+        <li>Test everything!</li>
+    </ul>
+
+    <hr>
+
+    <h2>GOING LIVE (Moving dev → main)</h2>
+
+    <h3>Step 1: Create Pull Request on GitHub</h3>
+    <ul>
+        <li>Go to your <a href="https://github.com/khaosbooks/khaos-books/tree/dev">GitHub</a> repository in browser</li>
+        <li>Look for green <strong>"Compare & pull request"</strong> button</li>
+        <li>Click it!</li>
+    </ul>
+
+    <h3>Step 2: Review and Merge</h3>
+    <ul>
+        <li>Check that:
+            <ul>
+                <li><strong>base: main</strong> (where changes go)</li>
+                <li><strong>compare: dev</strong> (where changes come from)</li>
+            </ul>
+        </li>
+        <li>Add a title (like "Updated services page")</li>
+        <li>Click <strong>"Create pull request"</strong></li>
+        <li>Click <strong>"Merge pull request"</strong></li>
+        <li>Click <strong>"Confirm merge"</strong></li>
+    </ul>
+
+    <h3>Step 3: Check Live Site</h3>
+    <ul>
+        <li>Wait 2 minutes</li>
+        <li>Visit: <a href="https://khaosbooks.com">https://khaosbooks.com</a></li>
+        <li>Verify changes are live</li>
+    </ul>
+
+    <hr>
+
+    <h2>AFTER MERGING (Back to VSCode)</h2>
+
+    <h3>Reset Your dev Branch</h3>
+    <ul>
+        <li>In VSCode, check bottom-left is on <strong>dev</strong></li>
+        <li>Source Control → "..." menu → Branch → Merge...</li>
+        <li>Select <strong>main</strong> from list</li>
+        <li>Continue working</li>
+    </ul>
+    <hr>
+
+    <h2>TROUBLESHOOTING</h2>
+    <table cellpadding="8">
+        <tr>
+            <th>Problem</th>
+            <th>Solution</th>
+        </tr>
+        <tr>
+            <td>Bottom-left still says main</td>
+            <td>Click it and select dev</td>
+        </tr>
+        <tr>
+            <td>Dev site not showing changes</td>
+            <td>Wait 2 min, refresh hard (Ctrl+Shift+R)</td>
+        </tr>
+        <tr>
+            <td>Dev URL not working</td>
+            <td>Go to Netlify → Deploys → find dev deploy</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="scripts/main-coming-soon.js"></script>
+    <link rel="stylesheet" href="/styles/main.css">
+    <meta charset="UTF-8">
+    <title>Character Art - Intake Form | KhaosBooks Services</title>
+    <meta name="description" content="Character art commission intake form for KhaosBooks">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <main class="container">
+        <section class="feedback-form">
+            <h1>Character Art</h1>
+            <p class="centred">Thank you for your interest in getting your character drawn by us at KhaosBooks!</p>
+            <p class="centred" style="margin-bottom: var(--xxl);">All information provided here is sent via email directly to me. It is not going to be shared with anyone else and the email will be deleted if we decide not to go through with a final contract.</p>
+            
+            <form action="https://formsubmit.co/pub@khaosbooks.com" method="POST" id="characterArt">
+                <input type="hidden" name="_subject" value="New Character Art Intake Form Received">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="http://khaosbooks.com/forms/thank-you">
+                <input type="checkbox" name="_honeypot" style="display: none !important;" tabindex="-1" autocomplete="off">
+
+                <div class="form-section">
+                    <h3>Project Details</h3>
+                    <div class="contact-fields">
+                        <div class="form-group">
+                            <label for="projectName">Project name</label>
+                            <input type="text" id="projectName" name="projectName" class="form-input" placeholder="ex. Orc Chieftain">
+                        </div>
+                        <div class="form-group">
+                            <label for="clientName">Your Name</label>
+                            <input type="text" id="clientName" name="clientName" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="clientEmail">Your Email</label>
+                            <input type="email" id="clientEmail" name="clientEmail" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="finalDeadline">Final deadline</label>
+                            <input type="date" id="finalDeadline" name="finalDeadline" class="form-input">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Character Information</h3>
+                    
+                    <div class="form-group">
+                        <label for="characterCount">How many characters?</label>
+                        <input type="number" id="characterCount" name="characterCount" class="form-input" min="1" value="1">
+                    </div>
+
+                    <div id="characterFieldsContainer"></div>
+
+                    <div class="form-group">
+                        <label for="referenceLink">Reference images (file link)</label>
+                        <input type="url" id="referenceLink" name="referenceLink" class="form-input" placeholder="https://drive.google.com/...">
+                        <span class="form-note">Make sure if you are providing a link to cloud storage that the permission settings are set to view by all</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Text description</label>
+                        <textarea id="description" name="description" class="form-textarea" placeholder="If no reference images or adjusted, please provide a detailed description of your character, including all physical aspects to be translated into art (ex. wavy red hair down to the waist), wardrobe, props, and any anatomy specifics. If multiple characters, specify how they are interacting in the same scene or if each is a separate image."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Pose preference</label>
+                        <div class="service-selector">
+                            <label class="service-option">
+                                <input type="radio" name="poseType" value="action">
+                                <span class="service-name">Action / Dynamic</span>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="poseType" value="standing">
+                                <span class="service-name">Standing / T-Pose</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="actionPoseField" class="conditional-field">
+                        <div class="form-group">
+                            <label for="actionPoseDetail">Action pose details</label>
+                            <input type="text" id="actionPoseDetail" name="actionPoseDetail" class="form-input" placeholder="Please describe the action/dynamic pose or provide a reference link">
+                        </div>
+                    </div>
+
+                    <div id="standingPoseField" class="conditional-field">
+                        <div class="form-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="referenceSheet" name="referenceSheet" value="yes">
+                                <label for="referenceSheet">Is this for a reference sheet?</label>
+                            </div>
+                            <span class="form-note">Reference sheets typically require front, back, and side views with callouts for details.</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Zoom level / Crop</label>
+                        <div class="service-selector">
+                            <label class="service-option">
+                                <input type="radio" name="zoomLevel" value="bust-up">
+                                <span class="service-name">Bust up</span>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="zoomLevel" value="thighs-up">
+                                <span class="service-name">Thighs up</span>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="zoomLevel" value="full-body">
+                                <span class="service-name">Full body</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="visualReferences">Visual references (style inspiration)</label>
+                        <textarea id="visualReferences" name="visualReferences" class="form-textarea" placeholder="Please provide 2-3 links to art styles you love (even if they are by other artists). Note: I will use these to gauge style, not to copy."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Package Options</h3>
+                    
+                    <div class="form-group">
+                        <label>Select your package</label>
+                        <div class="service-selector">
+                            <label class="service-option">
+                                <input type="radio" name="package" value="character-base">
+                                <span class="service-name">Character base</span>
+                                <p class="small-body">Character with outline and flat colors. Single color or simple gradient background. Perfect for initial concept visualization.</p>
+                                <p>€200</p>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="package" value="flat-render">
+                                <span class="service-name">Flat render</span>
+                                <p class="small-body">Simple shadows, outlines, and effects. Single color or simple gradient background. Your character with added depth.</p>
+                                <p>€300</p>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="package" value="full-render">
+                                <span class="service-name">Full render</span>
+                                <p class="small-body">Detailed shadows, lighting, and effects. Single color or simple gradient background. Your character brought to life.</p>
+                                <p>€400</p>
+                            </label>
+                        </div>
+                        <label>Want something a bit more special?</label>
+                        <span class="form-note">This is a unique style still in the works so not advertised. If you're open to experimenting, you can choose one of these options instead.</span>
+                        <div class="service-selector">
+                            <label class="service-option">
+                                <input type="radio" name="package" value="3d-character">
+                                <span class="service-name">3D Characters</span>
+                                <p class="small-body">3D rendered character. Single color or simple gradient background. Ready for covers, merch, or marketing.</p>
+                                <p>€300</p>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="package" value="watercolour">
+                                <span class="service-name">3D to Watercolour</span>
+                                <p class="small-body">3D character transformed into watercolor. Single color or simple gradient background. Unique artistic flair.</p>
+                                <p>€400</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Add-on background (select one)</label>
+                        <p class="form-note">Additional fee applies on top of the base package. Click a selected option to deselect.</p>
+                        <div class="service-selector" id="addonSelector">
+                            <label class="service-option">
+                                <input type="radio" name="addonGroup" value="pattern-bg">
+                                <span class="service-name">Pattern background</span>
+                                <p class="small-body">Custom backgrounds using patterns, effects, and vector art. Adds visual interest without overwhelming your character.</p>
+                                <p>+€100</p>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="addonGroup" value="digital-bg">
+                                <span class="service-name">Digital background</span>
+                                <p class="small-body">Custom backgrounds of space scenes or rough landscapes, digitally drawn. Place your character in their world.</p>
+                                <p>+€300</p>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="addonGroup" value="3d-bg">
+                                <span class="service-name">3D background</span>
+                                <p class="small-body">Procedural scenes in Photoshop, Blender, or 3D sets. Fully realized environments for maximum immersion.</p>
+                                <p>+€400</p>
+                            </label>
+                        </div>
+                        <input type="hidden" id="addonValue" name="addon" value="none">
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Asset Delivery</h3>
+                    
+                    <div class="form-group">
+                        <label for="intendedUse">What is the intended use of this image?</label>
+                        <input type="text" id="intendedUse" name="intendedUse" class="form-input" placeholder="ex. Book cover, Stream overlay, T-shirt print, Personal social media avatar">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Do you require source files? (PSD, BLEND, AI)</label>
+                        <div class="service-selector">
+                            <label class="service-option">
+                                <input type="radio" name="sourceFiles" value="no">
+                                <span class="service-name">No</span>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="sourceFiles" value="yes">
+                                <span class="service-name">Yes</span>
+                            </label>
+                        </div>
+                        <span class="form-note">Source files may incur an additional fee and are subject to licensing terms.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="termsAgreement" name="termsAgreement" value="agreed" required>
+                                <label for="termsAgreement">I understand that complex designs, multiple revisions beyond the initial sketch phase, and tight deadlines may incur additional costs.</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="commercialUse" name="commercialUse" value="commercial">
+                                <label for="commercialUse">This is for commercial use (book covers, merchandise, branding, etc.)</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-submit">
+                    <button type="submit" class="btn">
+                        Submit Form
+                    </button>
+                    <p class="ps" style="margin-top: var(--sm);">Thank you for filling this out! Keep an eye out on your email (even spam) for a response within 5 business days!</p>
+                </div>
+            </form>
+        </section>
+    </main>
+    
+    <script src="/scripts/forms.js"></script>
+</body>
+</html>

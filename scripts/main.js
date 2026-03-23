@@ -7,6 +7,7 @@ function loadHeadContent() {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/modals.css">
         <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1744283");</style>
     `;
     document.head.insertAdjacentHTML('beforeend', headContent);
@@ -252,4 +253,5 @@ function initThemeToggle() {
 document.addEventListener('DOMContentLoaded', () => {
     loadHeadContent();
     loadComponents();
+    setTimeout(initFormFunctionality, 100);
 });
