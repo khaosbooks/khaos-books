@@ -1035,6 +1035,13 @@ footer {
     margin: var(--md) 0;
 }
 
+.service-selector-2cols {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--md);
+    margin: var(--md) 0;
+}
+
 .service-option {
     cursor: pointer;
     padding: var(--md);
@@ -1164,6 +1171,11 @@ footer {
     
     .service-selector {
         grid-template-columns: repeat(2, 1fr);
+        gap: var(--sm);
+    }
+
+    .service-selector-2cols {
+        grid-template-columns: 1fr;
         gap: var(--sm);
     }
     
