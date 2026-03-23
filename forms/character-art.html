@@ -22,6 +22,7 @@
                 <input type="hidden" name="_next" value="http://khaosbooks.com/forms/thank-you">
                 <input type="checkbox" name="_honeypot" style="display: none !important;" tabindex="-1" autocomplete="off">
 
+                <!-- SECTION 1: PROJECT DETAILS -->
                 <div class="form-section">
                     <h3>Project Details</h3>
                     <div class="contact-fields">
@@ -44,175 +45,146 @@
                     </div>
                 </div>
 
+                <!-- SECTION 2: CHARACTER COUNT + TOGETHER/SEPARATE -->
                 <div class="form-section">
                     <h3>Character Information</h3>
-                    
                     <div class="form-group">
                         <label for="characterCount">How many characters?</label>
                         <input type="number" id="characterCount" name="characterCount" class="form-input" min="1" value="1">
                     </div>
 
+                    <div class="form-group" id="togetherSeparateGroup" style="display: none;">
+                        <label>Are the characters in a single image or separate files?</label>
+                        <div class="service-selector">
+                            <label class="service-option">
+                                <input type="radio" name="layoutType" value="together">
+                                <span class="service-name">Together (one image)</span>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="layoutType" value="separate">
+                                <span class="service-name">Separate files (each character individual)</span>
+                            </label>
+                        </div>
+                    </div>
+
                     <div id="characterFieldsContainer"></div>
+                </div>
 
+                <!-- GLOBAL SECTION: used when characters are together -->
+                <div id="globalPoseBackgroundSection" class="form-section" style="display: none;">
+                    <h3>Scene Composition (All Characters Together)</h3>
                     <div class="form-group">
-                        <label for="referenceLink">Reference images (file link)</label>
-                        <input type="url" id="referenceLink" name="referenceLink" class="form-input" placeholder="https://drive.google.com/...">
-                        <span class="form-note">Make sure if you are providing a link to cloud storage that the permission settings are set to view by all</span>
+                        <label for="globalPoseDetail">How are the characters posed together?</label>
+                        <textarea id="globalPoseDetail" name="globalPoseDetail" class="form-textarea" placeholder="Describe the interaction, positions, dynamic between characters..."></textarea>
                     </div>
-
                     <div class="form-group">
-                        <label for="description">Text description</label>
-                        <textarea id="description" name="description" class="form-textarea" placeholder="If no reference images or adjusted, please provide a detailed description of your character, including all physical aspects to be translated into art (ex. wavy red hair down to the waist), wardrobe, props, and any anatomy specifics. If multiple characters, specify how they are interacting in the same scene or if each is a separate image."></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Pose preference</label>
-                        <div class="service-selector">
+                        <label>Background for the combined image</label>
+                        <div class="service-selector service-selector-2cols" id="globalAddonSelector">
                             <label class="service-option">
-                                <input type="radio" name="poseType" value="action">
-                                <span class="service-name">Action / Dynamic</span>
+                                <input type="radio" name="globalAddonGroup" value="none">
+                                <span class="service-name">No background (simple gradient)</span>
+                                <p class="small-body">No extra charge</p>
                             </label>
                             <label class="service-option">
-                                <input type="radio" name="poseType" value="standing">
-                                <span class="service-name">Standing / T-Pose</span>
+                                <input type="radio" name="globalAddonGroup" value="pattern-bg">
+                                <span class="service-name">Pattern background</span>
+                                <p class="small-body">+€100</p>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="globalAddonGroup" value="digital-bg">
+                                <span class="service-name">Digital background</span>
+                                <p class="small-body">+€300</p>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="globalAddonGroup" value="3d-bg">
+                                <span class="service-name">3D background</span>
+                                <p class="small-body">+€400</p>
                             </label>
                         </div>
-                    </div>
-
-                    <div id="actionPoseField" class="conditional-field">
-                        <div class="form-group">
-                            <label for="actionPoseDetail">Action pose details</label>
-                            <input type="text" id="actionPoseDetail" name="actionPoseDetail" class="form-input" placeholder="Please describe the action/dynamic pose or provide a reference link">
-                        </div>
-                    </div>
-
-                    <div id="standingPoseField" class="conditional-field">
-                        <div class="form-group">
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="referenceSheet" name="referenceSheet" value="yes">
-                                <label for="referenceSheet">Is this for a reference sheet?</label>
+                        <div id="globalBackgroundDetails" style="display: none;">
+                            <div class="form-group">
+                                <label for="globalBgDescription">Background description</label>
+                                <textarea id="globalBgDescription" name="globalBgDescription" class="form-textarea" placeholder="Describe the environment, mood, key elements..."></textarea>
                             </div>
-                            <span class="form-note">Reference sheets typically require front, back, and side views with callouts for details.</span>
+                            <div class="form-group">
+                                <label for="globalBgReferences">Background reference links</label>
+                                <input type="url" id="globalBgReferences" name="globalBgReferences" class="form-input" placeholder="https://...">
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Zoom level / Crop</label>
-                        <div class="service-selector">
-                            <label class="service-option">
-                                <input type="radio" name="zoomLevel" value="bust-up">
-                                <span class="service-name">Bust up</span>
-                            </label>
-                            <label class="service-option">
-                                <input type="radio" name="zoomLevel" value="thighs-up">
-                                <span class="service-name">Thighs up</span>
-                            </label>
-                            <label class="service-option">
-                                <input type="radio" name="zoomLevel" value="full-body">
-                                <span class="service-name">Full body</span>
-                            </label>
+                        <div id="globalBgColorField" style="display: none;">
+                            <div class="form-group">
+                                <label for="globalBgColor">Background color (if simple gradient selected)</label>
+                                <input type="text" id="globalBgColor" name="globalBgColor" class="form-input" placeholder="e.g., #1a1a2e, dark blue, purple gradient">
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="visualReferences">Visual references (style inspiration)</label>
-                        <textarea id="visualReferences" name="visualReferences" class="form-textarea" placeholder="Please provide 2-3 links to art styles you love (even if they are by other artists). Note: I will use these to gauge style, not to copy."></textarea>
+                        <input type="hidden" id="globalAddonValue" name="globalAddon" value="none">
                     </div>
                 </div>
 
+                <!-- PACKAGE OPTIONS -->
                 <div class="form-section">
                     <h3>Package Options</h3>
-                    
                     <div class="form-group">
                         <label>Select your package</label>
-                        <div class="service-selector">
+                        <div class="service-selector" id="packageSelector">
                             <label class="service-option">
-                                <input type="radio" name="package" value="character-base">
+                                <input type="radio" name="package" value="character-base" data-price="200">
                                 <span class="service-name">Character base</span>
-                                <p class="small-body">Character with outline and flat colors. Single color or simple gradient background. Perfect for initial concept visualization.</p>
+                                <p class="small-body">Character with outline and flat colors. Single color or simple gradient background.</p>
                                 <p>€200</p>
                             </label>
                             <label class="service-option">
-                                <input type="radio" name="package" value="flat-render">
+                                <input type="radio" name="package" value="flat-render" data-price="300">
                                 <span class="service-name">Flat render</span>
-                                <p class="small-body">Simple shadows, outlines, and effects. Single color or simple gradient background. Your character with added depth.</p>
+                                <p class="small-body">Simple shadows, outlines, and effects. Single color or simple gradient background.</p>
                                 <p>€300</p>
                             </label>
                             <label class="service-option">
-                                <input type="radio" name="package" value="full-render">
+                                <input type="radio" name="package" value="full-render" data-price="400">
                                 <span class="service-name">Full render</span>
-                                <p class="small-body">Detailed shadows, lighting, and effects. Single color or simple gradient background. Your character brought to life.</p>
+                                <p class="small-body">Detailed shadows, lighting, and effects. Single color or simple gradient background.</p>
                                 <p>€400</p>
                             </label>
                         </div>
                         <label>Want something a bit more special?</label>
                         <span class="form-note">This is a unique style still in the works so not advertised. If you're open to experimenting, you can choose one of these options instead.</span>
-                        <div class="service-selector">
+                        <div class="service-selector" id="specialPackageSelector">
                             <label class="service-option">
-                                <input type="radio" name="package" value="3d-character">
+                                <input type="radio" name="package" value="3d-character" data-price="300">
                                 <span class="service-name">3D Characters</span>
-                                <p class="small-body">3D rendered character. Single color or simple gradient background. Ready for covers, merch, or marketing.</p>
+                                <p class="small-body">3D rendered character. Single color or simple gradient background.</p>
                                 <p>€300</p>
                             </label>
                             <label class="service-option">
-                                <input type="radio" name="package" value="watercolour">
+                                <input type="radio" name="package" value="watercolour" data-price="400">
                                 <span class="service-name">3D to Watercolour</span>
-                                <p class="small-body">3D character transformed into watercolor. Single color or simple gradient background. Unique artistic flair.</p>
+                                <p class="small-body">3D character transformed into watercolor. Single color or simple gradient background.</p>
                                 <p>€400</p>
                             </label>
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label>Add-on background (select one)</label>
-                        <p class="form-note">Additional fee applies on top of the base package. Click a selected option to deselect.</p>
-                        <div class="service-selector" id="addonSelector">
-                            <label class="service-option">
-                                <input type="radio" name="addonGroup" value="pattern-bg">
-                                <span class="service-name">Pattern background</span>
-                                <p class="small-body">Custom backgrounds using patterns, effects, and vector art. Adds visual interest without overwhelming your character.</p>
-                                <p>+€100</p>
-                            </label>
-                            <label class="service-option">
-                                <input type="radio" name="addonGroup" value="digital-bg">
-                                <span class="service-name">Digital background</span>
-                                <p class="small-body">Custom backgrounds of space scenes or rough landscapes, digitally drawn. Place your character in their world.</p>
-                                <p>+€300</p>
-                            </label>
-                            <label class="service-option">
-                                <input type="radio" name="addonGroup" value="3d-bg">
-                                <span class="service-name">3D background</span>
-                                <p class="small-body">Procedural scenes in Photoshop, Blender, or 3D sets. Fully realized environments for maximum immersion.</p>
-                                <p>+€400</p>
-                            </label>
-                        </div>
-                        <input type="hidden" id="addonValue" name="addon" value="none">
-                    </div>
                 </div>
 
+                <!-- ASSET DELIVERY -->
                 <div class="form-section">
                     <h3>Asset Delivery</h3>
-                    
                     <div class="form-group">
                         <label for="intendedUse">What is the intended use of this image?</label>
-                        <input type="text" id="intendedUse" name="intendedUse" class="form-input" placeholder="ex. Book cover, Stream overlay, T-shirt print, Personal social media avatar">
+                        <input type="text" id="intendedUse" name="intendedUse" class="form-input" placeholder="ex. Book cover, Stream overlay, T-shirt print">
                     </div>
-
                     <div class="form-group">
                         <label>Do you require source files? (PSD, BLEND, AI)</label>
                         <div class="service-selector">
                             <label class="service-option">
-                                <input type="radio" name="sourceFiles" value="no">
+                                <input type="radio" name="sourceFiles" value="no" data-source-fee="0">
                                 <span class="service-name">No</span>
                             </label>
                             <label class="service-option">
-                                <input type="radio" name="sourceFiles" value="yes">
-                                <span class="service-name">Yes</span>
+                                <input type="radio" name="sourceFiles" value="yes" data-source-fee="100">
+                                <span class="service-name">Yes (+€100)</span>
                             </label>
                         </div>
-                        <span class="form-note">Source files may incur an additional fee and are subject to licensing terms.</span>
                     </div>
-
                     <div class="form-group">
                         <div class="checkbox-group">
                             <div class="checkbox-item">
@@ -221,7 +193,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="form-group">
                         <div class="checkbox-group">
                             <div class="checkbox-item">
@@ -232,10 +203,16 @@
                     </div>
                 </div>
 
+                <!-- PRICE SUMMARY -->
+                <div class="form-section" id="priceSummarySection">
+                    <h3>Estimated Total</h3>
+                    <div id="priceBreakdown" class="form-group"></div>
+                    <div id="totalEstimateDisplay" style="text-align: right; font-size: var(--xl); font-weight: bold;"></div>
+                    <span class="form-note">*Final price confirmed after consultation. Additional characters are 50% of base package price each.</span>
+                </div>
+
                 <div class="form-submit">
-                    <button type="submit" class="btn">
-                        Submit Form
-                    </button>
+                    <button type="submit" class="btn">Submit Form</button>
                     <p class="ps" style="margin-top: var(--sm);">Thank you for filling this out! Keep an eye out on your email (even spam) for a response within 5 business days!</p>
                 </div>
             </form>
