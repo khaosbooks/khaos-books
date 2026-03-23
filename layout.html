@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <script src="scripts/main.js"></script>
+    <script src="scripts/modals.js"></script>
 </head>
 <body>
     <main class="container">
@@ -10,7 +11,7 @@
         <h1>Title test</h1>
         <h2>Section Heading</h2>
         <p>This is a paragraph of text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. This is a paragraph of text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
-        <p>This is a paragraph of text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
         <p class="ps">This is a paragraph of text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
     </section>
 
@@ -18,62 +19,525 @@
         <button class="tab-link active" data-tab="content1">Content</button>
         <button class="tab-link" data-tab="content2">Cards</button>
         <button class="tab-link" data-tab="content3">Lists</button>
+        <button class="tab-link" data-tab="content4">Forms</button>
     </div>
 
+    <div class="tabs-content">
+        <div id="content1" class="tab-content active">
+        <section>
+            <h3>Subsection Heading</h3>
+            <p>Another paragraph with some <a href="#">link text</a> in it.</p>
+            <div class="spacer"></div>
+            <h4>Minor Heading</h4>
+            <p>Smaller section of content.</p>
+            <h5>Don't just embrace the chaos - create it</h5>
+        </section>
+        </div>
 
-    <div id="content1" class="tab-content active">
-    <section>
-        <h3>Subsection Heading</h3>
-        <p>Another paragraph with some <a href="#">link text</a> in it.</p>
-        <div class="spacer"></div>
-        <h4>Minor Heading</h4>
-        <p>Smaller section of content.</p>
-        <h5>Don't just embrace the chaos - create it</h5>
-    </section>
+        <div id="content2" class="tab-content">
+        <section>
+            <div class="grid">
+                <div class="card">
+                    <h3>Card Title</h3>
+                    <p>Card content goes here. This is a grid item.</p>
+                    <button class="btn">Learn More</button>
+                </div>
+                <div class="card">
+                    <h3>Card Title</h3>
+                    <p>Another grid item with different content.</p>
+                    <button class="btn btn-secondary">Details</button>
+                </div>
+                <div class="card">
+                    <h3>Card Title</h3>
+                    <p>Third item in the responsive grid.</p>
+                    <button class="btn">View</button>
+                </div>
+            </div>
+        </section>
+        </div>
+
+        <div id="content3" class="tab-content">
+        <section>
+            <h2>Lists</h2>
+            <div class="grid">
+                <div>
+                    <h3>Unordered List</h3>
+                    <ul>
+                        <li>First item</li>
+                        <li>Second item</li>
+                        <li>Third item with subitems:
+                            <ul class="level2">
+                                <li>Subitem 1</li>
+                                <li>Subitem 2</li>
+                            </ul>
+                        </li>
+                        <li>Fourth item</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        </div>
+
+        <div id="content4" class="tab-content">
+        <section>
+            <div class="feedback-form">
+                <!-- Contact Information Section -->
+                <section class="form-section">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-fields">
+                        <div class="form-group">
+                            <label for="name">Name <span class="required">*</span></label>
+                            <input type="text" id="name" class="form-input" placeholder="Your name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" class="form-input" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone (optional)</label>
+                        <input type="tel" id="phone" class="form-input" placeholder="(123) 456-7890">
+                        <span class="form-note">For SMS updates about your project</span>
+                    </div>
+                </section>
+
+                <!-- Service Selection Section -->
+                <section class="form-section">
+                    <h3>Service Selection</h3>
+                    
+                    <div class="service-selector">
+                        <label class="service-option">
+                            <input type="radio" name="service" value="developmental">
+                            <span class="service-name">Developmental Edit</span>
+                        </label>
+                        <label class="service-option">
+                            <input type="radio" name="service" value="line">
+                            <span class="service-name">Line Edit</span>
+                        </label>
+                        <label class="service-option">
+                            <input type="radio" name="service" value="copy">
+                            <span class="service-name">Copy Edit</span>
+                        </label>
+                        <label class="service-option">
+                            <input type="radio" name="service" value="proof">
+                            <span class="service-name">Proofreading</span>
+                        </label>
+                        <label class="service-option">
+                            <input type="radio" name="service" value="cover">
+                            <span class="service-name">Cover Design</span>
+                        </label>
+                        <label class="service-option">
+                            <input type="radio" name="service" value="format">
+                            <span class="service-name">Formatting</span>
+                        </label>
+                    </div>
+
+                    <!-- Conditional Field - appears when certain services selected -->
+                    <div class="conditional-field active" id="genre-field">
+                        <div class="form-group">
+                            <label for="genre">Book Genre</label>
+                            <select id="genre" class="form-select">
+                                <option value="">Select a genre...</option>
+                                <option value="fantasy">Fantasy</option>
+                                <option value="scifi">Sci-Fi</option>
+                                <option value="romance">Romance</option>
+                                <option value="mystery">Mystery/Thriller</option>
+                                <option value="horror">Horror</option>
+                                <option value="litfic">Literary Fiction</option>
+                                <option value="nonfiction">Non-Fiction</option>
+                                <option value="ya">Young Adult</option>
+                                <option value="mg">Middle Grade</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Project Details Section -->
+                <section class="form-section">
+                    <h3>Project Details</h3>
+                    
+                    <div class="form-group">
+                        <label for="title">Book Title</label>
+                        <input type="text" id="title" class="form-input" placeholder="e.g., The Chaos Cycle">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="word-count">Word Count</label>
+                        <input type="number" id="word-count" class="form-input" placeholder="e.g., 85000">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Project Description</label>
+                        <textarea id="description" class="form-textarea" placeholder="Tell us about your book..."></textarea>
+                    </div>
+                </section>
+
+                <!-- Timeline Section -->
+                <section class="form-section">
+                    <h3>Timeline & Budget</h3>
+                    
+                    <div class="radio-group">
+                        <label class="radio-item">
+                            <input type="radio" name="timeline" value="rush">
+                            <span>Rush (1-2 weeks) +50%</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="timeline" value="standard">
+                            <span>Standard (3-4 weeks)</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="timeline" value="flexible">
+                            <span>Flexible (5-6 weeks)</span>
+                        </label>
+                    </div>
+
+                    <div class="delay-fields">
+                        <div class="form-group">
+                            <label for="start-date">Preferred Start Date</label>
+                            <input type="date" id="start-date" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="budget">Budget Range</label>
+                            <select id="budget" class="form-select">
+                                <option value="">Select range...</option>
+                                <option value="500">Under $500</option>
+                                <option value="1000">$500 - $1,000</option>
+                                <option value="2000">$1,000 - $2,000</option>
+                                <option value="3000">$2,000+</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Rating Section (using your star rating system) -->
+                <section class="form-section">
+                    <h3>How did you hear about us?</h3>
+                    
+                    <div class="form-group">
+                        <label>Rate your experience finding us:</label>
+                        <div class="star-rating-container">
+                            <div class="star-rating">
+                                <input type="radio" name="rating" id="star5" value="5">
+                                <label for="star5" title="5 stars"></label>
+                                <input type="radio" name="rating" id="star4" value="4">
+                                <label for="star4" title="4 stars"></label>
+                                <input type="radio" name="rating" id="star3" value="3">
+                                <label for="star3" title="3 stars"></label>
+                                <input type="radio" name="rating" id="star2" value="2">
+                                <label for="star2" title="2 stars"></label>
+                                <input type="radio" name="rating" id="star1" value="1">
+                                <label for="star1" title="1 star"></label>
+                            </div>
+                        </div>
+                        <div class="star-rating-tooltip">
+                            <span class="star-rating-value">Select a rating</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="referral">Specific referral source</label>
+                        <input type="text" id="referral" class="form-input" placeholder="e.g., Twitter, Facebook, Friend...">
+                    </div>
+                </section>
+
+                <!-- Additional Services (Checkboxes) -->
+                <section class="form-section">
+                    <h3>Additional Services</h3>
+                    
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="addon" value="blurb">
+                            <span>Blurb/Query review (+$75)</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="addon" value="synopsis">
+                            <span>Synopsis writing (+$50)</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="addon" value="beta">
+                            <span>Beta reader coordination (+$100)</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="addon" value="market">
+                            <span>Marketability assessment (+$150)</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="addon" value="author-photo">
+                            <span>Author photo editing (+$75)</span>
+                        </label>
+                    </div>
+                </section>
+
+                <!-- Form Submission -->
+                <div class="form-submit">
+                    <button type="submit" class="btn">Submit Inquiry</button>
+                    <button type="reset" class="btn btn-secondary">Reset Form</button>
+                </div>
+            </div>
+
+            <div class="spacer"></div>
+            <h2>Simple Contact Form</h2>
+            
+            <div class="card" style="max-width: 600px; margin: 0 auto;">
+                <form>
+                    <div class="form-group">
+                        <label for="simple-name">Name <span class="required">*</span></label>
+                        <input type="text" id="simple-name" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="simple-email">Email <span class="required">*</span></label>
+                        <input type="email" id="simple-email" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="simple-subject">Subject</label>
+                        <select id="simple-subject" class="form-select">
+                            <option>General Inquiry</option>
+                            <option>Editing Services</option>
+                            <option>Cover Design</option>
+                            <option>Collaboration</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="simple-message">Message</label>
+                        <textarea id="simple-message" class="form-textarea" rows="4"></textarea>
+                    </div>
+
+                    <label class="checkbox-item" style="margin-bottom: var(--md);">
+                        <input type="checkbox" name="newsletter">
+                        <span>Subscribe to newsletter</span>
+                    </label>
+
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+
+            <div class="spacer"></div>
+            <h2>Star Rating Demo</h2>
+            
+            <div class="card centred">
+                <h4>Rate this page:</h4>
+                <div class="star-rating-container">
+                    <div class="star-rating">
+                        <input type="radio" name="demo-rating" id="demo-star5" value="5">
+                        <label for="demo-star5" title="5 stars"></label>
+                        <input type="radio" name="demo-rating" id="demo-star4" value="4">
+                        <label for="demo-star4" title="4 stars"></label>
+                        <input type="radio" name="demo-rating" id="demo-star3" value="3">
+                        <label for="demo-star3" title="3 stars"></label>
+                        <input type="radio" name="demo-rating" id="demo-star2" value="2">
+                        <label for="demo-star2" title="2 stars"></label>
+                        <input type="radio" name="demo-rating" id="demo-star1" value="1">
+                        <label for="demo-star1" title="1 star"></label>
+                    </div>
+                </div>
+                <div class="star-rating-tooltip">
+                    <span class="star-rating-value">Click to rate</span>
+                </div>
+                <p class="ps">Star rating system from main.css</p>
+            </div>
+        </section>
+        </div>
     </div>
 
-    <div id="content2" class="tab-content">
-    <section>
-        <div class="grid">
-            <div class="card">
-                <h3>Card Title</h3>
-                <p>Card content goes here. This is a grid item.</p>
-                <button class="btn">Learn More</button>
-            </div>
-            <div class="card">
-                <h3>Card Title</h3>
-                <p>Another grid item with different content.</p>
-                <button class="btn btn-secondary">Details</button>
-            </div>
-            <div class="card">
-                <h3>Card Title</h3>
-                <p>Third item in the responsive grid.</p>
-                <button class="btn">View</button>
-            </div>
+    <section class="modal-triggers">
+        <h2>Modal Tests</h2>
+        <div class="grid grid--3-col">
+            <button class="btn" onclick="openModal('project-modal')">Open Project (0.5)</button>
+            <button class="btn" onclick="openModal('collaborator-modal')">Open Collaborator (0.7)</button>
+            <button class="btn" onclick="openModal('product-modal')">Open Product (0.8)</button>
         </div>
     </section>
+
+    <div id="project-modal" class="modal modal--project">
+        <div class="modal__overlay" onclick="closeModal('project-modal')"></div>
+        <div class="modal__container">
+            <div class="modal__header">
+                <h3 class="modal__title"><span class="modal__title-accent">Project:</span> The Chaos Cycle</h3>
+                <button class="modal__close" onclick="closeModal('project-modal')">&times;</button>
+            </div>
+            <div class="modal__content">
+                <div class="modal__gallery">
+                    <img src="/images/placeholder-cover.jpg" alt="Book cover" class="modal__gallery-main" id="project-main">
+                    <div class="modal__gallery-thumbs">
+                        <img src="/images/placeholder-cover.jpg" alt="Cover" class="modal__thumb modal__thumb--active">
+                        <img src="/images/placeholder-spread1.jpg" alt="Spread 1" class="modal__thumb">
+                        <img src="/images/placeholder-spread2.jpg" alt="Spread 2" class="modal__thumb">
+                        <img src="/images/placeholder-map.jpg" alt="Map" class="modal__thumb">
+                    </div>
+                </div>
+                
+                <div>
+                    <h2>The Chaos Cycle: Book One</h2>
+                    <p class="modal__author">by <a href="#" onclick="openModal('collaborator-modal'); return false;">Elena Vance</a></p>
+                    <div class="modal__tags">
+                        <span class="modal__tag">Fantasy</span>
+                        <span class="modal__tag">Dark Fantasy</span>
+                        <span class="modal__tag modal__tag--secondary modal__service-tag" onclick="window.location.href='/services/cover-design'">Cover Design</span>
+                    </div>
+                    <p>When the old gods fell silent, humanity built kingdoms from their bones. Now something stirs in the depths—a chaos that refuses to stay buried.</p>
+                    
+                    <div class="modal__specs">
+                        <h4>Book Specifications</h4>
+                        <p>384 pages · 6x9 trade paperback · Interior: cream paper</p>
+                        <h4>Creation Details</h4>
+                        <p>Cover art by Maria Chen · Typeset in Garamond · Maps by CartographyCo</p>
+                    </div>
+
+                    <div class="modal__family-links">
+                        <span class="modal__tag modal__tag--clickable">#1 The Chaos Cycle</span>
+                        <span class="modal__tag modal__tag--secondary modal__tag--clickable">#2 Echoes of Ruin</span>
+                        <span class="modal__tag modal__tag--secondary modal__tag--clickable">#3 Dawn of Ash</span>
+                    </div>
+
+                    <div class="modal__testimonial">
+                        "A masterpiece of dark fantasy. Vance weaves chaos into poetry."
+                        <div class="modal__testimonial-author">— Readers' Favorite</div>
+                    </div>
+
+                    <!-- Purchase buttons at bottom, left-aligned -->
+                    <div class="modal__cta modal__cta--left">
+                        <a href="#" class="btn">Amazon</a>
+                        <a href="#" class="btn btn-secondary">Kobo</a>
+                        <a href="#" class="btn btn-secondary">Apple Books</a>
+                        <button class="btn btn-secondary" onclick="closeModal('project-modal')">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div id="content3" class="tab-content">
-    <section>
-        <h2>Lists</h2>
-        <div class="grid">
-            <div>
-                <h3>Unordered List</h3>
-                <ul>
-                    <li>First item</li>
-                    <li>Second item</li>
-                    <li>Third item with subitems:
-                        <ul class="level2">
-                            <li>Subitem 1</li>
-                            <li>Subitem 2</li>
+    <div id="collaborator-modal" class="modal modal--collaborator">
+        <div class="modal__overlay" onclick="closeModal('collaborator-modal')"></div>
+        <div class="modal__container">
+            <div class="modal__header">
+                <h3 class="modal__title">Collaborator</h3>
+                <button class="modal__close" onclick="closeModal('collaborator-modal')">&times;</button>
+            </div>
+            <div class="modal__content">
+                <img src="/images/author-photo.jpg" alt="Elena Vance" class="modal__avatar">
+                <h2>Elena Vance</h2>
+                <p class="modal__join-date">Joined March 2023</p>
+                
+                <div class="modal__bio">
+                    <p>Elena writes atmospheric dark fantasy with morally complex characters. Her work has been featured in Year's Best Fantasy and she's a two-time SPFBO finalist.</p>
+                </div>
+
+                <h3>Books</h3>
+                <div class="modal__book-grid">
+                    <div class="modal__book-card">
+                        <img src="/images/book-cover1.jpg" alt="Book cover" class="modal__book-cover">
+                        <div class="modal__book-info">
+                            <h4 class="modal__book-title">The Chaos Cycle #1</h4>
+                            <p class="modal__book-meta">2024 · Dark Fantasy</p>
+                            <div class="modal__book-link">
+                                <button class="btn btn-secondary" onclick="openProjectModal('project-modal')">View Project</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal__book-card">
+                        <img src="/images/book-cover2.jpg" alt="Book cover" class="modal__book-cover">
+                        <div class="modal__book-info">
+                            <h4 class="modal__book-title">Bones of the Old Gods</h4>
+                            <p class="modal__book-meta">2022 · Epic Fantasy</p>
+                            <div class="modal__book-link">
+                                <button class="btn btn-secondary" onclick="openProjectModal('project-modal')">View Project</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal__book-card">
+                        <img src="/images/book-cover3.jpg" alt="Book cover" class="modal__book-cover">
+                        <div class="modal__book-info">
+                            <h4 class="modal__book-title">The Silent City</h4>
+                            <p class="modal__book-meta">2020 · Gothic Horror</p>
+                            <div class="modal__book-link">
+                                <button class="btn btn-secondary" onclick="openProjectModal('project-modal')">View Project</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal__book-card">
+                        <img src="/images/book-cover4.jpg" alt="Book cover" class="modal__book-cover">
+                        <div class="modal__book-info">
+                            <h4 class="modal__book-title">Crown of Ashes</h4>
+                            <p class="modal__book-meta">2025 · Dark Fantasy</p>
+                            <div class="modal__book-link">
+                                <button class="btn btn-secondary" onclick="openProjectModal('project-modal')">View Project</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social buttons only at bottom -->
+                <div class="modal__cta modal__cta--center">
+                    <a href="#" class="btn">Website</a>
+                    <a href="#" class="btn btn-secondary">Twitter</a>
+                    <a href="#" class="btn btn-secondary">Amazon</a>
+                    <button class="btn btn-secondary" onclick="closeModal('collaborator-modal')">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="product-modal" class="modal modal--product">
+        <div class="modal__overlay" onclick="closeModal('product-modal')"></div>
+        <div class="modal__container">
+            <div class="modal__header">
+                <h3 class="modal__title"><span class="modal__title-accent">Premade Cover:</span> Shadow Queen</h3>
+                <button class="modal__close" onclick="closeModal('product-modal')">&times;</button>
+            </div>
+            <div class="modal__content">
+                <div class="modal__gallery">
+                    <img src="/images/cover-main.jpg" alt="Cover design" class="modal__gallery-main" id="product-main">
+                    <div class="modal__gallery-thumbs">
+                        <img src="/images/cover-main.jpg" alt="Front cover" class="modal__thumb modal__thumb--active">
+                        <img src="/images/cover-back.jpg" alt="Back cover" class="modal__thumb">
+                        <img src="/images/cover-spine.jpg" alt="Spine" class="modal__thumb">
+                        <img src="/images/cover-mockup.jpg" alt="3D mockup" class="modal__thumb">
+                    </div>
+                </div>
+                
+                <div>
+                    <h2>"Shadow Queen" - Premade Cover</h2>
+                    <span class="modal__status modal__status--active">Available</span>
+                    <span class="modal__tag">Multi-author</span>
+                    
+                    <div class="modal__price">$299</div>
+                    
+                    <p>High-fantasy cover featuring a crowned figure in shadow, with glowing runes and atmospheric lighting. Perfect for epic fantasy, dark fantasy, or royal intrigue novels.</p>
+
+                    <div class="modal__product-specs">
+                        <h4>What's Included</h4>
+                        <ul>
+                            <li>Print cover (full wrap with spine)</li>
+                            <li>eBook cover (1600x2400px)</li>
+                            <li>Audiobook version (square)</li>
+                            <li>3D mockup for promotions</li>
+                            <li>Source files (PSD)</li>
+                            <li>Commercial font license</li>
                         </ul>
-                    </li>
-                    <li>Fourth item</li>
-                </ul>
+                    </div>
+
+                    <h4>Available Formats</h4>
+                    <div class="modal__tags">
+                        <!-- Non-clickable tags using modal__tag--secondary with pointer-events: none -->
+                        <span class="modal__tag modal__tag--secondary">Paperback (6x9)</span>
+                        <span class="modal__tag modal__tag--secondary">Hardcover (6x9)</span>
+                        <span class="modal__tag modal__tag--secondary">eBook Only</span>
+                    </div>
+
+                    <!-- Single Gumroad button at bottom -->
+                    <div class="modal__cta modal__cta--left">
+                        <a href="#" class="btn">Buy on Gumroad ($299)</a>
+                        <button class="btn btn-secondary" onclick="closeModal('product-modal')">Close</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
     </div>
 
 </main>
