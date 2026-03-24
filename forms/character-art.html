@@ -22,7 +22,7 @@
                 <input type="hidden" name="_next" value="http://khaosbooks.com/forms/thank-you">
                 <input type="checkbox" name="_honeypot" style="display: none !important;" tabindex="-1" autocomplete="off">
 
-                <!-- SECTION 1: PROJECT DETAILS -->
+                <!-- PROJECT DETAILS -->
                 <div class="form-section">
                     <h3>Project Details</h3>
                     <div class="contact-fields">
@@ -45,7 +45,51 @@
                     </div>
                 </div>
 
-                <!-- SECTION 2: CHARACTER COUNT + TOGETHER/SEPARATE -->
+                <!-- PACKAGE OPTIONS -->
+                <div class="form-section">
+                    <h3>Package Options</h3>
+                    <div class="form-group">
+                        <label>Select your package</label>
+                        <div class="service-selector" id="packageSelector">
+                            <label class="service-option">
+                                <input type="radio" name="package" value="character-base" data-price="200">
+                                <span class="service-name">Character base</span>
+                                <p class="small-body">Character with outline and flat colors. Single color or simple gradient background.</p>
+                                <p>€200</p>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="package" value="flat-render" data-price="300">
+                                <span class="service-name">Flat render</span>
+                                <p class="small-body">Simple shadows, outlines, and effects. Single color or simple gradient background.</p>
+                                <p>€300</p>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="package" value="full-render" data-price="400">
+                                <span class="service-name">Full render</span>
+                                <p class="small-body">Detailed shadows, lighting, and effects. Single color or simple gradient background.</p>
+                                <p>€400</p>
+                            </label>
+                        </div>
+                        <label>Want something a bit more special?</label>
+                        <span class="form-note">This is a unique style still in the works so not advertised. If you're open to experimenting, you can choose one of these options instead.</span>
+                        <div class="service-selector" id="specialPackageSelector">
+                            <label class="service-option">
+                                <input type="radio" name="package" value="3d-character" data-price="300">
+                                <span class="service-name">3D Characters</span>
+                                <p class="small-body">3D rendered character. Single color or simple gradient background.</p>
+                                <p>€300</p>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="package" value="watercolour" data-price="400">
+                                <span class="service-name">3D to Watercolour</span>
+                                <p class="small-body">3D character transformed into watercolor. Single color or simple gradient background.</p>
+                                <p>€400</p>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CHARACTER COUNT -->
                 <div class="form-section">
                     <h3>Character Information</h3>
                     <div class="form-group">
@@ -70,7 +114,7 @@
                     <div id="characterFieldsContainer"></div>
                 </div>
 
-                <!-- GLOBAL SECTION: used when characters are together -->
+                <!-- GLOBAL SECTION -->
                 <div id="globalPoseBackgroundSection" class="form-section" style="display: none;">
                     <h3>Scene Composition (All Characters Together)</h3>
                     <div class="form-group">
@@ -118,50 +162,6 @@
                             </div>
                         </div>
                         <input type="hidden" id="globalAddonValue" name="globalAddon" value="none">
-                    </div>
-                </div>
-
-                <!-- PACKAGE OPTIONS -->
-                <div class="form-section">
-                    <h3>Package Options</h3>
-                    <div class="form-group">
-                        <label>Select your package</label>
-                        <div class="service-selector" id="packageSelector">
-                            <label class="service-option">
-                                <input type="radio" name="package" value="character-base" data-price="200">
-                                <span class="service-name">Character base</span>
-                                <p class="small-body">Character with outline and flat colors. Single color or simple gradient background.</p>
-                                <p>€200</p>
-                            </label>
-                            <label class="service-option">
-                                <input type="radio" name="package" value="flat-render" data-price="300">
-                                <span class="service-name">Flat render</span>
-                                <p class="small-body">Simple shadows, outlines, and effects. Single color or simple gradient background.</p>
-                                <p>€300</p>
-                            </label>
-                            <label class="service-option">
-                                <input type="radio" name="package" value="full-render" data-price="400">
-                                <span class="service-name">Full render</span>
-                                <p class="small-body">Detailed shadows, lighting, and effects. Single color or simple gradient background.</p>
-                                <p>€400</p>
-                            </label>
-                        </div>
-                        <label>Want something a bit more special?</label>
-                        <span class="form-note">This is a unique style still in the works so not advertised. If you're open to experimenting, you can choose one of these options instead.</span>
-                        <div class="service-selector" id="specialPackageSelector">
-                            <label class="service-option">
-                                <input type="radio" name="package" value="3d-character" data-price="300">
-                                <span class="service-name">3D Characters</span>
-                                <p class="small-body">3D rendered character. Single color or simple gradient background.</p>
-                                <p>€300</p>
-                            </label>
-                            <label class="service-option">
-                                <input type="radio" name="package" value="watercolour" data-price="400">
-                                <span class="service-name">3D to Watercolour</span>
-                                <p class="small-body">3D character transformed into watercolor. Single color or simple gradient background.</p>
-                                <p>€400</p>
-                            </label>
-                        </div>
                     </div>
                 </div>
 

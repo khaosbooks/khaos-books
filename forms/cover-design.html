@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="scripts/main-coming-soon.js"></script>
+    <link rel="stylesheet" href="/styles/main.css">
+    <meta charset="UTF-8">
+    <title>Cover Design - Intake Form | KhaosBooks Services</title>
+    <meta name="description" content="Cover design commission intake form for photo-based, symbol, and character covers">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <main class="container">
+        <section class="feedback-form">
+            <h1>Cover Design</h1>
+            <p class="centred">A book cover is the first impression readers get. Let me create something that captures your story and stands out on the shelf.</p>
+            <p class="centred" style="margin-bottom: var(--xxl);">All information provided here is sent via email directly to me. It is not going to be shared with anyone else and the email will be deleted if we decide not to go through with a final contract.</p>
+
+            <form action="https://formsubmit.co/pub@khaosbooks.com" method="POST" id="coverDesignForm">
+                <input type="hidden" name="_subject" value="New Cover Design Intake Form Received">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="http://khaosbooks.com/forms/thank-you">
+                <input type="checkbox" name="_honeypot" style="display: none !important;" tabindex="-1" autocomplete="off">
+
+                <!-- PROJECT DETAILS -->
+                <div class="form-section">
+                    <h3>Project Details</h3>
+                    <div class="contact-fields">
+                        <div class="form-group">
+                            <label for="bookTitle">Book Title</label>
+                            <input type="text" id="bookTitle" name="bookTitle" class="form-input" placeholder="ex. The Last Ember" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="authorName">Author Name</label>
+                            <input type="text" id="authorName" name="authorName" class="form-input" placeholder="ex. Jane Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="clientName">Your Name / Pen Name</label>
+                            <input type="text" id="clientName" name="clientName" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientEmail">Your Email</label>
+                            <input type="email" id="clientEmail" name="clientEmail" class="form-input" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subtitle">Subtitle (if applicable)</label>
+                        <input type="text" id="subtitle" name="subtitle" class="form-input" placeholder="ex. Book One of the Ember Saga">
+                    </div>
+                    <div class="form-group">
+                        <label for="seriesInfo">Series information</label>
+                        <input type="text" id="seriesInfo" name="seriesInfo" class="form-input" placeholder="ex. Book 2 in The Crown Series">
+                    </div>
+                </div>
+
+                <!-- PACKAGE OPTIONS -->
+                <div class="form-section">
+                    <h3>Package Options</h3>
+                    <div class="form-group">
+                        <label>Select your package</label>
+                        <div class="service-selector" id="packageSelector">
+                            <label class="service-option">
+                                <input type="radio" name="package" value="photo-based" data-price="200">
+                                <span class="service-name">Photo-based</span>
+                                <p class="small-body">Up to 3 stock or provided images with minimal photo editing and adjustments. Clean typography included.</p>
+                                <p>€200.00</p>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="package" value="symbol-cover" data-price="400">
+                                <span class="service-name">Symbol cover</span>
+                                <p class="small-body">Custom symbols, objects, and/or silhouettes with effects, styles, and textures. Bold, graphic look that stands out.</p>
+                                <p>€400.00</p>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="package" value="character-cover" data-price="700">
+                                <span class="service-name">Character cover</span>
+                                <p class="small-body">Digitally drawn or 3D rendered characters on a matching background with text. Your protagonist front and center.</p>
+                                <p>€700.00</p>
+                            </label>
+                        </div>
+
+                        <label>Add-ons</label>
+                        <div class="service-selector" id="addonsSelector">
+                            <div class="service-option addon-option" data-addon="additional-formats" data-price="50">
+                                <span class="service-name">Additional formats</span>
+                                <p class="small-body">Adapt a larger cover format to a smaller one, such as from hardback to paperback or ebook to audiobook.</p>
+                                <p>+€50.00</p>
+                            </div>
+                            <div class="service-option addon-option" data-addon="expanding-format" data-price="100">
+                                <span class="service-name">Expanding format</span>
+                                <p class="small-body">Ebook to print or paperback to hardback adaptation. Fade to colour €50, reflective/blur €100, expanding the image €150.</p>
+                                <p>+€100.00</p>
+                            </div>
+                            <div class="service-option addon-option" data-addon="elements-pack" data-price="150">
+                                <span class="service-name">Elements pack</span>
+                                <p class="small-body">Individual elements rendered and saved as separate files. Up to 50 elements in 2 formats for use in marketing and merch.</p>
+                                <p>+€150.00</p>
+                            </div>
+                        </div>
+
+                        <label>Special option</label>
+                        <span class="form-note">Typography only - no photo edits of any sort, just adding typography to the cover that matches the style.</span>
+                        <div class="service-selector" id="specialPackageSelector">
+                            <label class="service-option">
+                                <input type="radio" name="package" value="typography-only" data-price="50">
+                                <span class="service-name">Typography only</span>
+                                <p class="small-body">Raging Winds style - clean typography cover with no imagery.</p>
+                                <p>€50.00</p>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EXPANDING FORMAT DETAILS -->
+                <div id="expandingFormatDetails" class="form-section" style="display: none;">
+                    <h3>Expanding Format Details</h3>
+                    <div class="form-group">
+                        <label>Select adaptation type</label>
+                        <div class="service-selector" id="adaptationTypeSelector">
+                            <label class="service-option">
+                                <input type="radio" name="adaptationType" value="fade-to-colour">
+                                <span class="service-name">Fade to colour</span>
+                                <p class="small-body">+€50</p>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="adaptationType" value="reflective-blur">
+                                <span class="service-name">Reflective/Blur</span>
+                                <p class="small-body">+€100</p>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="adaptationType" value="expanding-image">
+                                <span class="service-name">Expanding the image</span>
+                                <p class="small-body">+€150</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="adaptationDetails">Additional details</label>
+                        <textarea id="adaptationDetails" name="adaptationDetails" class="form-textarea" placeholder="Describe any specific requirements for the format adaptation."></textarea>
+                    </div>
+                </div>
+
+                <!-- ELEMENTS PACK DETAILS -->
+                <div id="elementsPackDetails" class="form-section" style="display: none;">
+                    <h3>Elements Pack Details</h3>
+                    <div class="form-group">
+                        <label for="elementsDescription">Elements description</label>
+                        <textarea id="elementsDescription" name="elementsDescription" class="form-textarea" placeholder="Describe the elements you'd like extracted from the cover (e.g., character silhouettes, symbols, decorative elements, etc.)."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="elementsFormats">Preferred formats</label>
+                        <input type="text" id="elementsFormats" name="elementsFormats" class="form-input" placeholder="e.g., PNG, SVG, both">
+                    </div>
+                </div>
+
+                <!-- COVER DETAILS & DESIGN PREFERENCES -->
+                <div class="form-section">
+                    <h3>Cover Details & Design Preferences</h3>
+                    <div class="form-group">
+                        <label for="coverDescription">Cover vision / description</label>
+                        <textarea id="coverDescription" name="coverDescription" class="form-textarea" placeholder="Describe your vision for the cover. Mood, tone, key elements, composition ideas, etc."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="colourPalette">Colour palette preferences</label>
+                        <input type="text" id="colourPalette" name="colourPalette" class="form-input" placeholder="e.g., dark blues and golds, earthy tones, vibrant reds, specific hex codes">
+                    </div>
+                    <div class="form-group">
+                        <label for="typographyStyle">Typography style preferences</label>
+                        <input type="text" id="typographyStyle" name="typographyStyle" class="form-input" placeholder="e.g., elegant serif, bold sans-serif, hand-lettered, modern">
+                    </div>
+                    <div class="form-group">
+                        <label for="inspirationLinks">Inspiration / Reference Links</label>
+                        <input type="url" id="inspirationLinks" name="inspirationLinks" class="form-input" placeholder="Pinterest board, reference covers, art styles">
+                    </div>
+                    <div class="form-group">
+                        <label for="imageLinks">Stock image / Reference image links</label>
+                        <input type="url" id="imageLinks" name="imageLinks" class="form-input" placeholder="For photo-based covers, share links to stock images or your own photos">
+                    </div>
+                    <div class="form-group">
+                        <label for="additionalNotes">Additional Notes or Special Requests</label>
+                        <textarea id="additionalNotes" name="additionalNotes" class="form-textarea" placeholder="Tell me about your vision, specific elements, or any concerns..."></textarea>
+                    </div>
+                </div>
+
+                <!-- FORMAT & DELIVERY -->
+                <div class="form-section">
+                    <h3>Format & Delivery</h3>
+                    <div class="form-group">
+                        <label for="trimSize">Trim size / Format</label>
+                        <input type="text" id="trimSize" name="trimSize" class="form-input" placeholder="e.g., 6x9 paperback, 5x8 ebook, hardback">
+                    </div>
+                    <div class="form-group">
+                        <label>Do you require source files? (PSD, AI, high-res exports)</label>
+                        <div class="service-selector">
+                            <label class="service-option">
+                                <input type="radio" name="sourceFiles" value="no" data-source-fee="0" checked>
+                                <span class="service-name">No</span>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="sourceFiles" value="yes" data-source-fee="100">
+                                <span class="service-name">Yes (+€100)</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="deadline">Preferred deadline</label>
+                        <input type="date" id="deadline" name="deadline" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="termsAgreement" name="termsAgreement" value="agreed" required>
+                                <label for="termsAgreement">I understand that complex designs, multiple revisions beyond the initial concept phase, and tight deadlines may incur additional costs.</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRICE SUMMARY -->
+                <div class="form-section" id="priceSummarySection">
+                    <h3>Estimated Total</h3>
+                    <div id="priceBreakdown" class="form-group"></div>
+                    <div id="totalEstimateDisplay" style="text-align: right; font-size: var(--xl); font-weight: bold;"></div>
+                    <span class="form-note">*Final price confirmed after consultation. Stock images (if needed) are not included in package price.</span>
+                </div>
+
+                <div class="form-submit">
+                    <button type="submit" class="btn">Submit Form</button>
+                    <p class="ps" style="margin-top: var(--sm);">Thank you for filling this out! Keep an eye out on your email (even spam) for a response within 5 business days!</p>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="/scripts/forms.js"></script>
+</body>
+</html>

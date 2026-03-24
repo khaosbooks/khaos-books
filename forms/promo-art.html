@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="scripts/main-coming-soon.js"></script>
+    <link rel="stylesheet" href="/styles/main.css">
+    <meta charset="UTF-8">
+    <title>Promo Art - Intake Form | KhaosBooks Services</title>
+    <meta name="description" content="Promo art commission intake form for icons, headers, vectors, and chapter art">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <main class="container">
+        <section class="feedback-form">
+            <h1>Promo Art</h1>
+            <p class="centred">Custom icons, headers, vectors, and chapter art to elevate your book's interior and visual identity.</p>
+            <p class="centred" style="margin-bottom: var(--xxl);">All information provided here is sent via email directly to me. It is not going to be shared with anyone else and the email will be deleted if we decide not to go through with a final contract.</p>
+
+            <form action="https://formsubmit.co/pub@khaosbooks.com" method="POST" id="promoArtForm">
+                <input type="hidden" name="_subject" value="New Promo Art Intake Form Received">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="http://khaosbooks.com/forms/thank-you">
+                <input type="checkbox" name="_honeypot" style="display: none !important;" tabindex="-1" autocomplete="off">
+
+                <!-- PROJECT DETAILS -->
+                <div class="form-section">
+                    <h3>Project Details</h3>
+                    <div class="contact-fields">
+                        <div class="form-group">
+                            <label for="projectName">Project name</label>
+                            <input type="text" id="projectName" name="projectName" class="form-input" placeholder="ex. The Last Ember Icons">
+                        </div>
+                        <div class="form-group">
+                            <label for="clientName">Your Name / Pen Name</label>
+                            <input type="text" id="clientName" name="clientName" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientEmail">Your Email</label>
+                            <input type="email" id="clientEmail" name="clientEmail" class="form-input" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PACKAGE OPTIONS -->
+                <div class="form-section">
+                    <h3>Package Options</h3>
+                    <div class="form-group">
+                        <label>Select your package</label>
+                        <div class="service-selector" id="packageSelector">
+                            <label class="service-option">
+                                <input type="radio" name="package" value="icons-headers" data-price="25">
+                                <span class="service-name">Icons & headers</span>
+                                <p class="small-body">Chapter headers or map icons in PNG and SVG. Two export colors included. Simple, clean assets for your book's interior.</p>
+                                <p>€25.00 / set of 3</p>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="package" value="textured-vectors" data-price="50">
+                                <span class="service-name">Textured vectors</span>
+                                <p class="small-body">Standard vector exports plus textured color versions of each. Adds depth and richness to your visuals.</p>
+                                <p>€50.00 / set of 3</p>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="package" value="chapter-art" data-price="75">
+                                <span class="service-name">Chapter art</span>
+                                <p class="small-body">Advanced chapter art with matching scene breaks. A cohesive visual experience throughout your book.</p>
+                                <p>€75.00 / set of 3</p>
+                            </label>
+                        </div>
+
+                        <label>Add-ons</label>
+                        <div class="service-selector" id="addonsSelector">
+                            <div class="service-option addon-option" data-addon="advanced-vector" data-price="25">
+                                <span class="service-name">Advanced vector</span>
+                                <p class="small-body">More detailed designs for simple vector art. Upgrade your icons and headers with extra complexity and polish.</p>
+                                <p>+€25.00</p>
+                            </div>
+                            <div class="service-option addon-option" data-addon="alternate-versions" data-price="50">
+                                <span class="service-name">Alternate versions</span>
+                                <p class="small-body">Slight variations for chapter art instead of new designs, just adjusted current ones. Flexibility for different uses.</p>
+                                <p>+€50.00</p>
+                            </div>
+                            <div class="service-option addon-option" data-addon="full-chapter-set" data-price="150">
+                                <span class="service-name">Full chapter set</span>
+                                <p class="small-body">Complete chapter art package including headers, scene breaks, pagination, and part-titles for your entire book.</p>
+                                <p>+€150.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DESIGN PREFERENCES -->
+                <div class="form-section">
+                    <h3>Design Preferences</h3>
+                    <div class="form-group">
+                        <label for="setCount">Number of sets</label>
+                        <input type="number" id="setCount" name="setCount" class="form-input" min="1" value="1">
+                        <span class="form-note">Each set includes 3 pieces (icons, headers, or chapter art pieces depending on package).</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="artDescription">Art description</label>
+                        <textarea id="artDescription" name="artDescription" class="form-textarea" placeholder="Describe what you'd like illustrated. What themes, symbols, or imagery should be included?"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="colorPreferences">Color preferences</label>
+                        <input type="text" id="colorPreferences" name="colorPreferences" class="form-input" placeholder="e.g., gold and burgundy, cool blues, specific hex codes">
+                    </div>
+                    <div class="form-group">
+                        <label for="inspirationLinks">Inspiration / Reference Links</label>
+                        <input type="url" id="inspirationLinks" name="inspirationLinks" class="form-input" placeholder="Pinterest board, similar art styles, mood boards">
+                    </div>
+                    <div class="form-group" id="alternateVersionsDetails" style="display: none;">
+                        <label for="alternateVersionsDescription">Alternate versions description</label>
+                        <textarea id="alternateVersionsDescription" name="alternateVersionsDescription" class="form-textarea" placeholder="Describe the variations you'd like (e.g., different poses, color variations, flipped orientations, etc.)"></textarea>
+                    </div>
+                    <div class="form-group" id="fullChapterSetDetails" style="display: none;">
+                        <label for="fullChapterSetDescription">Full chapter set details</label>
+                        <textarea id="fullChapterSetDescription" name="fullChapterSetDescription" class="form-textarea" placeholder="Describe the scope: how many chapters, part-titles needed, any specific elements for pagination or scene breaks"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="additionalNotes">Additional Notes or Special Requests</label>
+                        <textarea id="additionalNotes" name="additionalNotes" class="form-textarea" placeholder="Tell me about your vision, specific design elements, or any concerns..."></textarea>
+                    </div>
+                </div>
+
+                <!-- ASSET DELIVERY -->
+                <div class="form-section">
+                    <h3>Asset Delivery</h3>
+                    <div class="form-group">
+                        <label for="intendedUse">What is the intended use of these assets?</label>
+                        <input type="text" id="intendedUse" name="intendedUse" class="form-input" placeholder="ex. Book interior, website, marketing materials">
+                    </div>
+                    <div class="form-group">
+                        <label>Do you require source files? (AI, EPS, PSD)</label>
+                        <div class="service-selector">
+                            <label class="service-option">
+                                <input type="radio" name="sourceFiles" value="no" data-source-fee="0" checked>
+                                <span class="service-name">No</span>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="sourceFiles" value="yes" data-source-fee="50">
+                                <span class="service-name">Yes (+€50)</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="deadline">Preferred deadline</label>
+                        <input type="date" id="deadline" name="deadline" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="termsAgreement" name="termsAgreement" value="agreed" required>
+                                <label for="termsAgreement">I understand that complex designs, multiple revisions beyond the initial sketch phase, and tight deadlines may incur additional costs.</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRICE SUMMARY -->
+                <div class="form-section" id="priceSummarySection">
+                    <h3>Estimated Total</h3>
+                    <div id="priceBreakdown" class="form-group"></div>
+                    <div id="totalEstimateDisplay" style="text-align: right; font-size: var(--xl); font-weight: bold;"></div>
+                    <span class="form-note">*Final price confirmed after consultation. Each set includes 3 pieces. Additional revisions may adjust final cost.</span>
+                </div>
+
+                <div class="form-submit">
+                    <button type="submit" class="btn">Submit Form</button>
+                    <p class="ps" style="margin-top: var(--sm);">Thank you for filling this out! Keep an eye out on your email (even spam) for a response within 5 business days!</p>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="/scripts/forms.js"></script>
+</body>
+</html>

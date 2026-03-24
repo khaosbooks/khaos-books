@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="scripts/main-coming-soon.js"></script>
+    <link rel="stylesheet" href="/styles/main.css">
+    <meta charset="UTF-8">
+    <title>Typesetting Services - Intake Form | KhaosBooks</title>
+    <meta name="description" content="Professional typesetting, ebook formatting, print layout, and art print layout services">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <main class="container">
+        <section class="feedback-form">
+            <h1>Typesetting & Layout</h1>
+            <p class="centred">Bring your manuscript to life with professional typesetting. Whether you need clean ebook formatting, elegant print layout, or artistic interior design, we've got you covered.</p>
+            <p class="centred" style="margin-bottom: var(--xxl);">All information submitted is confidential and sent directly via email. We'll follow up within 5 business days with a consultation and final quote.</p>
+
+            <form action="https://formsubmit.co/pub@khaosbooks.com" method="POST" id="typesettingForm">
+                <input type="hidden" name="_subject" value="New Typesetting Intake Form Received">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="http://khaosbooks.com/forms/thank-you">
+                <input type="checkbox" name="_honeypot" style="display: none !important;" tabindex="-1" autocomplete="off">
+
+                <!-- PROJECT DETAILS -->
+                <div class="form-section">
+                    <h3>Project Details</h3>
+                    <div class="contact-fields">
+                        <div class="form-group">
+                            <label for="projectTitle">Book/Project Title</label>
+                            <input type="text" id="projectTitle" name="projectTitle" class="form-input" placeholder="ex. The Last Ember" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientName">Your Name / Pen Name</label>
+                            <input type="text" id="clientName" name="clientName" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientEmail">Your Email</label>
+                            <input type="email" id="clientEmail" name="clientEmail" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="wordCount">Approx. Word Count</label>
+                            <input type="number" id="wordCount" name="wordCount" class="form-input" placeholder="e.g., 80000" step="1000">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PACKAGE OPTIONS -->
+                <div class="form-section">
+                    <h3>Package Options</h3>
+                    <div class="form-group">
+                        <label>Select your package</label>
+                        <div class="service-selector" id="packageSelector">
+                            <label class="service-option">
+                                <input type="radio" name="package" value="ebook-formatting" data-price="200">
+                                <span class="service-name">Ebook formatting</span>
+                                <p class="small-body">Clean formatting for all major ereaders. We handle the technical validation so you can publish with confidence.</p>
+                                <p>€200</p>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="package" value="print-layout" data-price="250">
+                                <span class="service-name">Print layout</span>
+                                <p class="small-body">Clean, professional interior for print with standard chapter headings, matched to your cover.</p>
+                                <p>€250</p>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="package" value="art-print-layout" data-price="400">
+                                <span class="service-name">Art print layout</span>
+                                <p class="small-body">Special formatting plus up to 3 chapter art designs and scene breaks that bring your story to life on the page.</p>
+                                <p>€400</p>
+                            </label>
+                        </div>
+                        
+                        <label>Add-ons</label>
+                        <div class="service-selector" id="addonsSelector">
+                            <label class="service-option addon-option" data-addon="scene-art" data-price="25">
+                                <input type="checkbox" name="addon_scene_art" value="scene-art">
+                                <span class="service-name">Scene art</span>
+                                <p class="small-body">Custom vector illustrations for chapter headers, scene breaks, or pagination. Also provided as separate files.</p>
+                                <p>+€25</p>
+                            </label>
+                            <label class="service-option addon-option" data-addon="additional-formats" data-price="100">
+                                <input type="checkbox" name="addon_additional_formats" value="additional-formats" class="addon-with-details">
+                                <span class="service-name">Additional formats</span>
+                                <p class="small-body">Expand your reach. Convert your finished design — ebook from print, or paperback from hardback.</p>
+                                <p>+€100 each</p>
+                            </label>
+                            <label class="service-option addon-option" data-addon="clean-ebook" data-price="100">
+                                <input type="checkbox" name="addon_clean_ebook" value="clean-ebook">
+                                <span class="service-name">Clean ebook</span>
+                                <p class="small-body">Your print book, expertly adapted for a flawless digital reading experience on all ereader platforms.</p>
+                                <p>+€100</p>
+                            </label>
+                        </div>
+                        <div id="sceneArtDetails" class="conditional-field" style="display: none;">
+                            <div class="form-group">
+                                <label for="sceneArtDescription">Scene art description</label>
+                                <textarea id="sceneArtDescription" name="sceneArtDescription" class="form-textarea" placeholder="Describe the illustrations you'd like for chapter headers, scene breaks, or pagination..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <span class="form-note">If you have very specific instructions for the scene art, use the <a href="/forms/promo-art">Promo Art</a> form as well to submit your instructions.</span>
+                            </div>
+                        </div>
+                        <div id="additionalFormatsDetails" class="conditional-field" style="display: none;">
+                            <div class="form-group">
+                                <label for="formatCount">How many additional formats?</label>
+                                <input type="number" id="formatCount" name="formatCount" class="form-input" min="1" value="1">
+                            </div>
+                            <div class="form-group">
+                                <label for="formatTypes">What formats do you need?</label>
+                                <textarea id="formatTypes" name="formatTypes" class="form-textarea" placeholder="e.g., EPUB, MOBI, PDF, Paperback from Hardback, etc."></textarea>
+                            </div>
+                        </div>
+                        
+                        <label>Special options</label>
+                        <div class="service-selector" id="specialPackageSelector">
+                            <label class="service-option">
+                                <input type="radio" name="package" value="journals" data-price="400">
+                                <span class="service-name">Journals</span>
+                                <p class="small-body">Up to 10 unique page layouts and 5 custom art spreads. Perfect for journals, planners, or creative notebooks.</p>
+                                <p>€400</p>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="package" value="poetry" data-price="250">
+                                <span class="service-name">Poetry</span>
+                                <p class="small-body">Up to 5 unique page layouts and 5 custom art spreads. Designs that honor the rhythm and spacing of your verse.</p>
+                                <p>€250</p>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DESIGN PREFERENCES -->
+                <div class="form-section">
+                    <h3>Design Preferences</h3>
+                    <div id="trimSizeGroup" class="form-group">
+                        <label for="trimSize">Trim Size (for print)</label>
+                        <input type="text" id="trimSize" name="trimSize" class="form-input" placeholder="e.g., 5.5x8.5 in, 6x9">
+                    </div>
+                    <div class="form-group">
+                        <label>Font Preferences (if any)</label>
+                        <div class="contact-fields" style="grid-template-columns: 1fr 1fr;">
+                            <input type="text" name="bodyFont" class="form-input" placeholder="Body font (e.g., Garamond, Minion)">
+                            <input type="text" name="headingFont" class="form-input" placeholder="Heading font (e.g., Montserrat)">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inspirationLinks">Inspiration / Reference Links</label>
+                        <input type="url" id="inspirationLinks" name="inspirationLinks" class="form-input" placeholder="Pinterest board, book examples, etc.">
+                    </div>
+                    <div class="form-group">
+                        <label for="specialElements">Special Elements (maps, appendices, illustrations, tables)</label>
+                        <textarea id="specialElements" name="specialElements" class="form-textarea" placeholder="Describe any complex elements like footnotes, endnotes, tables, images, etc."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="additionalNotes">Additional Notes or Special Requests</label>
+                        <textarea id="additionalNotes" name="additionalNotes" class="form-textarea" placeholder="Tell us about your vision, specific design elements, or any concerns..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Cover status</label>
+                        <div class="service-selector" id="coverSelector">
+                            <div class="service-option" id="coverHasOption">
+                                <span class="service-name">I already have a cover</span>
+                            </div>
+                            <div class="service-option" id="coverNeedOption">
+                                <span class="service-name">I need cover design assistance</span>
+                            </div>
+                        </div>
+                        <div id="coverLinkField" style="display: none; margin-top: var(--sm);">
+                            <label for="coverLink">Cover image or reference link</label>
+                            <input type="url" id="coverLink" name="coverLink" class="form-input" placeholder="https://...">
+                            <span class="form-note">The interior can be matched to your existing cover design.</span>
+                        </div>
+                        <div id="coverAssistanceNote" style="display: none; margin-top: var(--sm);">
+                            <span class="form-note">Please fill out our <a href="/forms/cover-design" target="_blank">cover design intake form</a> for assistance with your cover.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ASSET DELIVERY -->
+                <div class="form-section">
+                    <h3>Asset Delivery</h3>
+                    <div class="form-group">
+                        <label for="intendedUse">What is the intended use of this layout?</label>
+                        <input type="text" id="intendedUse" name="intendedUse" class="form-input" placeholder="ex. Amazon KDP, IngramSpark, direct sales">
+                    </div>
+                    <div class="form-group">
+                        <label>Do you require source files? (INDD, DOCX, EPUB source)</label>
+                        <div class="service-selector">
+                            <label class="service-option">
+                                <input type="radio" name="sourceFiles" value="no" data-source-fee="0" checked>
+                                <span class="service-name">No</span>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="sourceFiles" value="yes" data-source-fee="100">
+                                <span class="service-name">Yes (+€100)</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="deadline">Preferred deadline</label>
+                        <input type="date" id="deadline" name="deadline" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="termsAgreement" name="termsAgreement" value="agreed" required>
+                                <label for="termsAgreement">I understand that complex designs, multiple revisions beyond the initial draft phase, and tight deadlines may incur additional costs.</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRICE SUMMARY -->
+                <div class="form-section" id="priceSummarySection">
+                    <h3>Estimated Total</h3>
+                    <div id="priceBreakdown" class="form-group"></div>
+                    <div id="totalEstimateDisplay" style="text-align: right; font-size: var(--xl); font-weight: bold;"></div>
+                    <span class="form-note">*Final price confirmed after consultation. Additional revisions or complex custom elements may adjust final cost.</span>
+                </div>
+
+                <div class="form-submit">
+                    <button type="submit" class="btn">Submit Form</button>
+                    <p class="ps" style="margin-top: var(--sm);">Thank you for filling this out! Keep an eye out on your email (even spam) for a response within 5 business days!</p>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="/scripts/forms.js"></script>
+</body>
+</html>

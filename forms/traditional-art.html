@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="scripts/main-coming-soon.js"></script>
+    <link rel="stylesheet" href="/styles/main.css">
+    <meta charset="UTF-8">
+    <title>Traditional Art - Intake Form | KhaosBooks Services</title>
+    <meta name="description" content="Traditional art commission intake form for ink drawings, landscapes, and detailed illustrations">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <main class="container">
+        <section class="feedback-form">
+            <h1>Traditional Art</h1>
+            <p class="centred">Hand-crafted ink drawings with a unique touch. From simple line art to richly detailed pieces, I'll create something special for your project.</p>
+            <p class="centred" style="margin-bottom: var(--xxl);">All information provided here is sent via email directly to me. It is not going to be shared with anyone else and the email will be deleted if we decide not to go through with a final contract.</p>
+
+            <form action="https://formsubmit.co/pub@khaosbooks.com" method="POST" id="traditionalArtForm">
+                <input type="hidden" name="_subject" value="New Traditional Art Intake Form Received">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="http://khaosbooks.com/forms/thank-you">
+                <input type="checkbox" name="_honeypot" style="display: none !important;" tabindex="-1" autocomplete="off">
+
+                <!-- PROJECT DETAILS -->
+                <div class="form-section">
+                    <h3>Project Details</h3>
+                    <div class="contact-fields">
+                        <div class="form-group">
+                            <label for="projectName">Project name</label>
+                            <input type="text" id="projectName" name="projectName" class="form-input" placeholder="ex. Forest Guardian Ink">
+                        </div>
+                        <div class="form-group">
+                            <label for="clientName">Your Name / Pen Name</label>
+                            <input type="text" id="clientName" name="clientName" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientEmail">Your Email</label>
+                            <input type="email" id="clientEmail" name="clientEmail" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="artType">Type of artwork</label>
+                            <input type="text" id="artType" name="artType" class="form-input" placeholder="ex. Character portrait, landscape, abstract design">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PACKAGE OPTIONS -->
+                <div class="form-section">
+                    <h3>Package Options</h3>
+                    <div class="form-group">
+                        <label>Select your package</label>
+                        <div class="service-selector" id="packageSelector">
+                            <label class="service-option">
+                                <input type="radio" name="package" value="ink-drawing" data-price="50">
+                                <span class="service-name">Ink drawing</span>
+                                <p class="small-body">Simple ink drawing with a unique twist - no patterns or effects. Clean, classic line art for a timeless feel.</p>
+                                <p>€50.00</p>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="package" value="landscape-ink" data-price="200">
+                                <span class="service-name">Landscape ink</span>
+                                <p class="small-body">Patterned and abstract version of a landscape scene with specific details. Artistic interpretation of your setting.</p>
+                                <p>€200.00</p>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="package" value="detailed-ink" data-price="300">
+                                <span class="service-name">Detailed ink</span>
+                                <p class="small-body">Multiple patterns and styles combined into one drawing. Rich, complex artwork for special pieces.</p>
+                                <p>€300.00</p>
+                            </label>
+                        </div>
+
+                        <label>Add-ons</label>
+                        <div class="service-selector" id="addonsSelector">
+                            <div class="service-option addon-option" data-addon="vector-conversion" data-price="25">
+                                <span class="service-name">Vector conversion</span>
+                                <p class="small-body">Convert your traditional art to scalable vector format. Perfect for logos, merch, or resizing without quality loss.</p>
+                                <p>+€25.00</p>
+                            </div>
+                            <div class="service-option addon-option" data-addon="large-scale" data-price="100">
+                                <span class="service-name">Large scale</span>
+                                <p class="small-body">Get a much more detailed and larger scale version of the original idea. For prints or special displays.</p>
+                                <p>+€100.00</p>
+                            </div>
+                            <div class="service-option addon-option" data-addon="filled" data-price="200">
+                                <span class="service-name">Filled</span>
+                                <p class="small-body">Full page design with darker fills, multiple patterns and drawings. Makes a bold statement.</p>
+                                <p>+€200.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ARTWORK DETAILS -->
+                <div class="form-section">
+                    <h3>Artwork Details</h3>
+                    <div class="form-group">
+                        <label for="artDescription">Art description</label>
+                        <textarea id="artDescription" name="artDescription" class="form-textarea" placeholder="Describe what you'd like drawn. Subject, composition, mood, and any specific elements to include."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="sizePreference">Size preference</label>
+                        <input type="text" id="sizePreference" name="sizePreference" class="form-input" placeholder="e.g., A4, A3, 8x10 inches, digital use only">
+                    </div>
+                    <div class="form-group">
+                        <label for="inspirationLinks">Inspiration / Reference Links</label>
+                        <input type="url" id="inspirationLinks" name="inspirationLinks" class="form-input" placeholder="Pinterest board, reference images, art styles">
+                    </div>
+                    <div class="form-group">
+                        <label for="additionalNotes">Additional Notes or Special Requests</label>
+                        <textarea id="additionalNotes" name="additionalNotes" class="form-textarea" placeholder="Tell me about your vision, specific elements, or any concerns..."></textarea>
+                    </div>
+                </div>
+
+                <!-- ASSET DELIVERY -->
+                <div class="form-section">
+                    <h3>Asset Delivery</h3>
+                    <div class="form-group">
+                        <label for="intendedUse">What is the intended use of this artwork?</label>
+                        <input type="text" id="intendedUse" name="intendedUse" class="form-input" placeholder="ex. Book interior, print, website, personal collection">
+                    </div>
+                    <div class="form-group">
+                        <label>Do you want the original? (mailed in)</label>
+                        <div class="service-selector">
+                            <label class="service-option">
+                                <input type="radio" name="sourceFiles" value="no" data-source-fee="0" checked>
+                                <span class="service-name">No</span>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="sourceFiles" value="yes" data-source-fee="100">
+                                <span class="service-name">Yes (+postage fees from Europe)</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="deadline">Preferred deadline</label>
+                        <input type="date" id="deadline" name="deadline" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="termsAgreement" name="termsAgreement" value="agreed" required>
+                                <label for="termsAgreement">I understand that complex designs, multiple revisions beyond the initial sketch phase, and tight deadlines may incur additional costs.</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRICE SUMMARY -->
+                <div class="form-section" id="priceSummarySection">
+                    <h3>Estimated Total</h3>
+                    <div id="priceBreakdown" class="form-group"></div>
+                    <div id="totalEstimateDisplay" style="text-align: right; font-size: var(--xl); font-weight: bold;"></div>
+                    <span class="form-note">*Final price confirmed after consultation. Traditional artwork is one-of-a-kind; final piece will be shipped or scanned based on agreement.</span>
+                </div>
+
+                <div class="form-submit">
+                    <button type="submit" class="btn">Submit Form</button>
+                    <p class="ps" style="margin-top: var(--sm);">Thank you for filling this out! Keep an eye out on your email (even spam) for a response within 5 business days!</p>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="/scripts/forms.js"></script>
+</body>
+</html>
