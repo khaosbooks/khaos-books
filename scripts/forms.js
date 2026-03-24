@@ -246,6 +246,10 @@ function initCharacterArtForm() {
                             <span class="service-name">Action / Dynamic</span>
                         </label>
                         <label class="service-option">
+                            <input type="radio" name="poseType_${charId}" value="sitting">
+                            <span class="service-name">Sitting / Leaning</span>
+                        </label>
+                        <label class="service-option">
                             <input type="radio" name="poseType_${charId}" value="standing">
                             <span class="service-name">Standing / T-Pose</span>
                         </label>
@@ -254,6 +258,10 @@ function initCharacterArtForm() {
                 <div class="form-group conditional-pose" data-char="${charId}" data-pose="action" style="display:none;">
                     <label for="actionPose_${charId}">Action pose details</label>
                     <input type="text" id="actionPose_${charId}" name="character_${charId}_actionPose" class="form-input" placeholder="Describe the dynamic pose">
+                </div>
+                <div class="form-group conditional-pose" data-char="${charId}" data-pose="sitting" style="display:none;">
+                    <label for="sittingPose_${charId}">Sitting pose details</label>
+                    <input type="text" id="sittingPose_${charId}" name="character_${charId}_sittingPose" class="form-input" placeholder="Describe the sitting pose or what they are sitting/leaning against">
                 </div>
                 <div class="form-group conditional-pose" data-char="${charId}" data-pose="standing" style="display:none;">
                     <div class="checkbox-item">
@@ -310,7 +318,7 @@ function initCharacterArtForm() {
                 </div>
                 <div id="charBgColorField_${charId}" style="display:none;">
                     <div class="form-group">
-                        <label for="charBgColor_${charId}">Background color (if simple gradient selected)</label>
+                        <label for="charBgColor_${charId}">Background color</label>
                         <input type="text" id="charBgColor_${charId}" name="character_${charId}_bgColor" class="form-input" placeholder="e.g., #1a1a2e, dark blue, purple gradient">
                     </div>
                 </div>
