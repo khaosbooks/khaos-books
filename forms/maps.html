@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="scripts/main-coming-soon.js"></script>
+    <link rel="stylesheet" href="/styles/main.css">
+    <meta charset="UTF-8">
+    <title>Maps - Intake Form | KhaosBooks Services</title>
+    <meta name="description" content="Custom map commission intake form for city maps, black and white, and coloured maps">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <main class="container">
+        <section class="feedback-form">
+            <h1>Maps</h1>
+            <p class="centred">Custom maps to bring your world to life. From detailed city layouts to rich coloured landscapes, I'll create a map that fits your story.</p>
+            <p class="centred" style="margin-bottom: var(--xxl);">All information provided here is sent via email directly to me. It is not going to be shared with anyone else and the email will be deleted if we decide not to go through with a final contract.</p>
+
+            <form action="https://formsubmit.co/pub@khaosbooks.com" method="POST" id="mapsForm">
+                <input type="hidden" name="_subject" value="New Maps Intake Form Received">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="http://khaosbooks.com/forms/thank-you">
+                <input type="checkbox" name="_honeypot" style="display: none !important;" tabindex="-1" autocomplete="off">
+
+                <!-- PROJECT DETAILS -->
+                <div class="form-section">
+                    <h3>Project Details</h3>
+                    <div class="contact-fields">
+                        <div class="form-group">
+                            <label for="projectName">Map/World name</label>
+                            <input type="text" id="projectName" name="projectName" class="form-input" placeholder="ex. The Kingdom of Eldoria">
+                        </div>
+                        <div class="form-group">
+                            <label for="clientName">Your Name / Pen Name</label>
+                            <input type="text" id="clientName" name="clientName" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientEmail">Your Email</label>
+                            <input type="email" id="clientEmail" name="clientEmail" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mapType">Type of map</label>
+                            <input type="text" id="mapType" name="mapType" class="form-input" placeholder="ex. World map, regional map, city map, dungeon map">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <span class="form-note">If accepted, I will ask for your manuscript or detailed notes to begin the map creation process.</span>
+                    </div>
+                </div>
+
+                <!-- PACKAGE OPTIONS -->
+                <div class="form-section">
+                    <h3>Package Options</h3>
+                    <div class="form-group">
+                        <label>Select your package</label>
+                        <div class="service-selector" id="packageSelector">
+                            <label class="service-option">
+                                <input type="radio" name="package" value="city-maps" data-price="200">
+                                <span class="service-name">City maps</span>
+                                <p class="small-body">Individual buildings, roads, layouts, and levels. Best for detailed urban environments and complex locations.</p>
+                                <p>€200.00</p>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="package" value="black-white" data-price="250">
+                                <span class="service-name">Black and white</span>
+                                <p class="small-body">Maps using Photoshop textures, brushes, and effects. Classic map aesthetic in greyscale or sepia for print.</p>
+                                <p>€250.00</p>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="package" value="coloured" data-price="300">
+                                <span class="service-name">Coloured</span>
+                                <p class="small-body">Coloured maps with mock-3D relief and terrain textures. Bring your world to life with rich, immersive geography.</p>
+                                <p>€300.00</p>
+                            </label>
+                        </div>
+
+                        <label>Add-ons</label>
+                        <div class="service-selector" id="addonsSelector">
+                            <div class="service-option addon-option" data-addon="custom-icons" data-price="25">
+                                <span class="service-name">Custom icons</span>
+                                <p class="small-body">Unique map markers, compass roses, and location symbols tailored to your world. Hand-drawn or vector.</p>
+                                <p>+€25 / set of 3</p>
+                            </div>
+                            <div class="service-option addon-option" data-addon="bw-clr-variation" data-price="50">
+                                <span class="service-name">BW/Clr variation</span>
+                                <p class="small-body">Add simple colour swatches to basic maps, or add custom BW filter to coloured maps. Flexibility for different uses.</p>
+                                <p>+€50</p>
+                            </div>
+                            <div class="service-option addon-option" data-addon="hand-drawn" data-price="200">
+                                <span class="service-name">Hand-drawn</span>
+                                <p class="small-body">Full customization with hand-drawn elements, from icons to landscape and more. Truly one-of-a-kind map details.</p>
+                                <p>+€200</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ADD-ON DETAILS -->
+                <div class="form-section" id="addonDetailsSection">
+                    <h3>Add-on Details</h3>
+                    
+                    <div id="customIconsDetails" class="addon-detail" style="display: none;">
+                        <div class="form-group">
+                            <label for="iconCount">How many icon sets?</label>
+                            <input type="number" id="iconCount" name="iconCount" class="form-input" min="1" value="1">
+                            <span class="form-note">Each set includes 3 custom icons.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="iconDescriptions">Icon descriptions</label>
+                            <textarea id="iconDescriptions" name="iconDescriptions" class="form-textarea" placeholder="Describe each icon you need. Examples: castle, forest temple, mountain pass, port city, dragon lair, etc."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="iconStyle">Icon style preferences</label>
+                            <input type="text" id="iconStyle" name="iconStyle" class="form-input" placeholder="e.g., hand-drawn, geometric, minimalist, ornate, fantasy style">
+                        </div>
+                    </div>
+
+                    <div id="bwClrVariationDetails" class="addon-detail" style="display: none;">
+                        <div class="form-group">
+                            <label for="variationType">Variation type</label>
+                            <div class="service-selector" id="variationTypeSelector">
+                                <label class="service-option">
+                                    <input type="radio" name="variationType" value="bw-to-colour">
+                                    <span class="service-name">Black & white to colour</span>
+                                    <p class="small-body">Add colour swatches to a black & white map</p>
+                                </label>
+                                <label class="service-option">
+                                    <input type="radio" name="variationType" value="colour-to-bw">
+                                    <span class="service-name">Colour to black & white</span>
+                                    <p class="small-body">Create a black & white version of a coloured map</p>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="variationDetails">Additional details</label>
+                            <textarea id="variationDetails" name="variationDetails" class="form-textarea" placeholder="Describe any specific colour preferences, filters, or effects you'd like applied."></textarea>
+                        </div>
+                    </div>
+
+                    <div id="handDrawnDetails" class="addon-detail" style="display: none;">
+                        <div class="form-group">
+                            <label for="handDrawnElements">Hand-drawn elements description</label>
+                            <textarea id="handDrawnElements" name="handDrawnElements" class="form-textarea" placeholder="Describe what elements should be hand-drawn: icons, borders, compass roses, decorative flourishes, landscape features, etc."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="handDrawnStyle">Art style preferences</label>
+                            <input type="text" id="handDrawnStyle" name="handDrawnStyle" class="form-input" placeholder="e.g., vintage, whimsical, realistic, Tolkien-style, intricate linework">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MAP DETAILS & DESIGN PREFERENCES -->
+                <div class="form-section">
+                    <h3>Map Details & Design Preferences</h3>
+                    <div class="form-group">
+                        <label for="mapDescription">Map description</label>
+                        <textarea id="mapDescription" name="mapDescription" class="form-textarea" placeholder="Describe the geography, locations, cities, landmarks, borders, and any important features that should be included."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="colourPreferences">Colour preferences</label>
+                        <input type="text" id="colourPreferences" name="colourPreferences" class="form-input" placeholder="e.g., earthy tones, vibrant jewel tones, sepia, specific hex codes">
+                    </div>
+                    <div class="form-group">
+                        <label for="inspirationLinks">Inspiration / Reference Links</label>
+                        <input type="url" id="inspirationLinks" name="inspirationLinks" class="form-input" placeholder="Pinterest board, reference maps, art styles">
+                    </div>
+                    <div class="form-group">
+                        <label for="roughSketchesLinks">Rough sketches / Design samples links</label>
+                        <input type="url" id="roughSketchesLinks" name="roughSketchesLinks" class="form-input" placeholder="https://... (Google Drive, Dropbox, etc.)">
+                        <span class="form-note">Share links to any rough sketches, hand-drawn maps, or design samples you have.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="additionalNotes">Additional Notes or Special Requests</label>
+                        <textarea id="additionalNotes" name="additionalNotes" class="form-textarea" placeholder="Tell me about your vision, specific elements, or any concerns..."></textarea>
+                    </div>
+                </div>
+
+                <!-- ASSET DELIVERY -->
+                <div class="form-section">
+                    <h3>Asset Delivery</h3>
+                    <div class="form-group">
+                        <label for="intendedUse">What is the intended use of this map?</label>
+                        <select id="intendedUse" name="intendedUse" class="form-input">
+                            <option value="">Select an option...</option>
+                            <option value="digital-only">Digital only (web, ebook, screen)</option>
+                            <option value="print">Print (book interior, poster, etc.)</option>
+                            <option value="both">Both digital and print</option>
+                        </select>
+                    </div>
+
+                    <div id="digitalDetails" style="display: none;">
+                        <div class="form-group">
+                            <label for="digitalSize">Digital file size (in pixels)</label>
+                            <input type="text" id="digitalSize" name="digitalSize" class="form-input" placeholder="e.g., 1920x1080, 3000x2000, 1200x1800">
+                            <span class="form-note">Specify the dimensions you need for digital use (width x height).</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="digitalOrientation">Orientation</label>
+                            <div class="service-selector">
+                                <label class="service-option">
+                                    <input type="radio" name="digitalOrientation" value="portrait">
+                                    <span class="service-name">Portrait</span>
+                                    <p class="small-body">Taller than wide (e.g., 1080x1920)</p>
+                                </label>
+                                <label class="service-option">
+                                    <input type="radio" name="digitalOrientation" value="landscape">
+                                    <span class="service-name">Landscape</span>
+                                    <p class="small-body">Wider than tall (e.g., 1920x1080)</p>
+                                </label>
+                                <label class="service-option">
+                                    <input type="radio" name="digitalOrientation" value="square">
+                                    <span class="service-name">Square</span>
+                                    <p class="small-body">Equal width and height (e.g., 1080x1080)</p>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="printDetails" style="display: none;">
+                        <div class="form-group">
+                            <label for="trimSize">Trim size and placement</label>
+                            <input type="text" id="trimSize" name="trimSize" class="form-input" placeholder="e.g., 6x9 book, map on two-page full spread">
+                            <span class="form-note">Describe how the map will be placed. Examples: single page, two-page spread, full bleed, etc.</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Bleed or border preference</label>
+                            <div class="service-selector" id="bleedSelector">
+                                <label class="service-option">
+                                    <input type="radio" name="bleedOption" value="bleed">
+                                    <span class="service-name">Full bleed</span>
+                                    <p class="small-body">Map extends to the edge of the page with no border. Requires extra margin (bleed) for printing.</p>
+                                </label>
+                                <label class="service-option">
+                                    <input type="radio" name="bleedOption" value="border">
+                                    <span class="service-name">With border</span>
+                                    <p class="small-body">Map has a decorative border or margin around it, keeping content safely away from the cut edge.</p>
+                                </label>
+                            </div>
+                            <div id="borderDetails" style="display: none; margin-top: var(--sm);">
+                                <label for="borderDescription">Border description</label>
+                                <textarea id="borderDescription" name="borderDescription" class="form-textarea" placeholder="Describe the border style: simple line, decorative frame, ornate corners, weathered edge, etc. Examples: 'a thin double line with ornate corner flourishes' or 'a simple black border with weathered texture'"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Do you require source files? (PSD, AI, EPS)</label>
+                        <div class="service-selector">
+                            <label class="service-option">
+                                <input type="radio" name="sourceFiles" value="no" data-source-fee="0" checked>
+                                <span class="service-name">No</span>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="sourceFiles" value="yes" data-source-fee="75">
+                                <span class="service-name">Yes (+€100)</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="deadline">Preferred deadline</label>
+                        <input type="date" id="deadline" name="deadline" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="termsAgreement" name="termsAgreement" value="agreed" required>
+                                <label for="termsAgreement">I understand that complex designs, multiple revisions beyond the initial sketch phase, and tight deadlines may incur additional costs.</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRICE SUMMARY -->
+                <div class="form-section" id="priceSummarySection">
+                    <h3>Estimated Total</h3>
+                    <div id="priceBreakdown" class="form-group"></div>
+                    <div id="totalEstimateDisplay" style="text-align: right; font-size: var(--xl); font-weight: bold;"></div>
+                    <span class="form-note">*Final price confirmed after consultation. Custom icons pricing based on number of sets. Additional revisions may adjust final cost.</span>
+                </div>
+
+                <div class="form-submit">
+                    <button type="submit" class="btn">Submit Form</button>
+                    <p class="ps" style="margin-top: var(--sm);">Thank you for filling this out! Keep an eye out on your email (even spam) for a response within 5 business days!</p>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="/scripts/forms.js"></script>
+</body>
+</html>

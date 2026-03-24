@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="scripts/main-coming-soon.js"></script>
+    <link rel="stylesheet" href="/styles/main.css">
+    <meta charset="UTF-8">
+    <title>Author Brand - Intake Form | KhaosBooks Services</title>
+    <meta name="description" content="Author brand development intake form for logo suites, one-page websites, and multi-page websites">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <main class="container">
+        <section class="feedback-form">
+            <h1>Author Brand</h1>
+            <p class="centred">Build your author presence with a cohesive visual identity and professional website that connects with readers.</p>
+            <p class="centred" style="margin-bottom: var(--xxl);">All information provided here is sent via email directly to me. It is not going to be shared with anyone else and the email will be deleted if we decide not to go through with a final contract.</p>
+
+            <form action="https://formsubmit.co/pub@khaosbooks.com" method="POST" id="authorBrandForm">
+                <input type="hidden" name="_subject" value="New Author Brand Intake Form Received">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="http://khaosbooks.com/forms/thank-you">
+                <input type="checkbox" name="_honeypot" style="display: none !important;" tabindex="-1" autocomplete="off">
+
+                <!-- PROJECT DETAILS -->
+                <div class="form-section">
+                    <h3>Project Details</h3>
+                    <div class="contact-fields">
+                        <div class="form-group">
+                            <label for="authorName">Author Name / Pen Name</label>
+                            <input type="text" id="authorName" name="authorName" class="form-input" placeholder="ex. Jane Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientName">Your Name (if different)</label>
+                            <input type="text" id="clientName" name="clientName" class="form-input" placeholder="ex. Jane Smith">
+                        </div>
+                        <div class="form-group">
+                            <label for="clientEmail">Your Email</label>
+                            <input type="email" id="clientEmail" name="clientEmail" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="currentWebsite">Current website (if any)</label>
+                            <input type="url" id="currentWebsite" name="currentWebsite" class="form-input" placeholder="https://...">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="authorBio">Author bio / About information</label>
+                        <textarea id="authorBio" name="authorBio" class="form-textarea" placeholder="Tell me about yourself, your writing journey, and what readers should know about you."></textarea>
+                    </div>
+                </div>
+
+                <!-- PACKAGE OPTIONS -->
+                <div class="form-section">
+                    <h3>Package Options</h3>
+                    <div class="form-group">
+                        <label>Select your package</label>
+                        <div class="service-selector" id="packageSelector">
+                            <label class="service-option">
+                                <input type="radio" name="package" value="logo-suite" data-price="200">
+                                <span class="service-name">Logo suite</span>
+                                <p class="small-body">Logo with colour palette and basic fonts, delivered in multiple formats to start your visual identity.</p>
+                                <p>€200.00</p>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="package" value="one-page-website" data-price="500">
+                                <span class="service-name">One-page website</span>
+                                <p class="small-body">Single page site with author section, book info, contact form, and visual identity from a pre-made template.</p>
+                                <p>€500.00</p>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="package" value="multi-page-website" data-price="1000">
+                                <span class="service-name">Multi-page website</span>
+                                <p class="small-body">Home page with 5 sections, about page, pages for up to 3 books, and contact page from a pre-made template.</p>
+                                <p>€1,000.00</p>
+                            </label>
+                        </div>
+
+                        <label>Add-ons</label>
+                        <div class="service-selector" id="addonsSelector">
+                            <div class="service-option addon-option" data-addon="logo-suite" data-price="200">
+                                <span class="service-name">Logo suite</span>
+                                <p class="small-body">Logo with colour palette and basic fonts, delivered in multiple formats to start your visual identity. (For website packages)</p>
+                                <p>+€200.00</p>
+                            </div>
+                            <div class="service-option addon-option" data-addon="additional-pages" data-price="50">
+                                <span class="service-name">Additional pages</span>
+                                <p class="small-body">Extra pages following the layout of an already created website. Expand your site as your career grows.</p>
+                                <p>+€50.00 each</p>
+                            </div>
+                            <div class="service-option addon-option" data-addon="completely-custom" data-price="5000">
+                                <span class="service-name">Completely custom</span>
+                                <p class="small-body">Built from scratch with custom structure, layouts, and pages. Starting at €5,000. Unique colours and functions tailored to your vision.</p>
+                                <p>From €5,000.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WEBSITE CONTENT -->
+                <div id="websiteContentSection" class="form-section" style="display: none;">
+                    <h3>Website Content</h3>
+                    <div class="form-group">
+                        <label for="homepageContent">Homepage / Page 1 Content</label>
+                        <textarea id="homepageContent" name="homepageContent" class="form-textarea" rows="8" placeholder="Describe what you want on your main page. Include sections like: Hero section with tagline, About the author teaser, Featured books, Newsletter signup, Social links, etc. The more detail you provide, the better I can match your vision."></textarea>
+                        <span class="form-note">If you're unsure about content, we can work together to create a structure that works for you.</span>
+                    </div>
+                </div>
+
+                <!-- ADDITIONAL PAGES DETAILS-->
+                <div id="additionalPagesDetails" class="form-section" style="display: none;">
+                    <h3>Additional Pages Details</h3>
+                    <div class="form-group">
+                        <label for="pageCount">How many additional pages?</label>
+                        <input type="number" id="pageCount" name="pageCount" class="form-input" min="1" value="1">
+                        <span class="form-note">Each additional page is €50. Page numbers start from your existing pages.</span>
+                    </div>
+                    <div id="pageDescriptionsContainer"></div>
+                    <div class="form-group">
+                        <span class="form-note">If you don't have content or ideas yet, we can discuss this in detail. I can provide a flow/map/structure first to help guide you.</span>
+                    </div>
+                </div>
+
+                <!-- CUSTOM WEBSITE DETAILS -->
+                <div id="customWebsiteDetails" class="form-section" style="display: none;">
+                    <h3>Custom Website Details</h3>
+                    <div class="form-group">
+                        <span class="form-note">Completely custom websites start at €5,000 and require a detailed consultation to discuss your specific needs. After submitting this form, I will reach out to schedule a call to go over everything in detail.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="customFeatures">Custom features / functionality needed</label>
+                        <textarea id="customFeatures" name="customFeatures" class="form-textarea" placeholder="Describe any specific features, functionality, or unique elements you need for your custom website."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="customInspiration">Custom website inspiration / examples</label>
+                        <input type="url" id="customInspiration" name="customInspiration" class="form-input" placeholder="Links to websites or designs you admire">
+                    </div>
+                    <div class="form-group">
+                        <label for="customBudget">Budget range (if known)</label>
+                        <input type="text" id="customBudget" name="customBudget" class="form-input" placeholder="e.g., €5,000-7,000, €8,000+">
+                    </div>
+                </div>
+
+                <!-- PERSONAL DOMAIN -->
+                <div id="personalDomainField" class="form-section" style="display: none;">
+                    <h3>Personal Domain</h3>
+                    <div class="form-group">
+                        <label for="domainName">Desired domain name</label>
+                        <input type="text" id="domainName" name="domainName" class="form-input" placeholder="yourname">
+                        <span class="form-note">Your domain will be: [yourname].khaosbooks.com (only lowercase letters, numbers, and hyphens, no spaces) +€100</span>
+                    </div>
+                </div>
+
+                <!-- BOOKS & CONTENT -->
+                <div class="form-section">
+                    <h3>Books & Content</h3>
+                    <div class="form-group">
+                        <label for="booksList">Books to feature</label>
+                        <textarea id="booksList" name="booksList" class="form-textarea" placeholder="List your books with titles, genres, and any links to covers or purchase pages. Include series information if applicable."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="socialLinks">Social media links</label>
+                        <input type="text" id="socialLinks" name="socialLinks" class="form-input" placeholder="Instagram, Twitter/X, Facebook, TikTok, etc. (separate with commas)">
+                    </div>
+                    <div class="form-group">
+                        <label for="newsletterInfo">Newsletter / Mailing list info</label>
+                        <input type="text" id="newsletterInfo" name="newsletterInfo" class="form-input" placeholder="Link to your newsletter signup or provider (e.g., Mailchimp, ConvertKit)">
+                    </div>
+                </div>
+
+                <!-- BRAND & DESIGN PREFERENCES -->
+                <div class="form-section">
+                    <h3>Brand & Design Preferences</h3>
+                    <div class="form-group">
+                        <label for="brandDescription">Brand vision / description</label>
+                        <textarea id="brandDescription" name="brandDescription" class="form-textarea" placeholder="Describe the feeling or mood you want your brand to convey. What words come to mind? (e.g., mysterious, whimsical, epic, cozy, modern)"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="colourPreferences">Colour preferences</label>
+                        <input type="text" id="colourPreferences" name="colourPreferences" class="form-input" placeholder="e.g., dark blues and golds, earthy tones, jewel tones, specific hex codes">
+                    </div>
+                    <div class="form-group">
+                        <label for="fontPreferences">Font preferences</label>
+                        <input type="text" id="fontPreferences" name="fontPreferences" class="form-input" placeholder="e.g., elegant serif, modern sans-serif, hand-lettered style">
+                    </div>
+                    <div class="form-group">
+                        <label for="inspirationLinks">Inspiration / Reference Links</label>
+                        <input type="url" id="inspirationLinks" name="inspirationLinks" class="form-input" placeholder="Pinterest board, author websites you admire, design styles">
+                    </div>
+                    <div class="form-group">
+                        <label for="existingMaterials">Existing brand materials links</label>
+                        <input type="url" id="existingMaterials" name="existingMaterials" class="form-input" placeholder="Links to existing logo, colour palette, or brand assets (Google Drive, Dropbox)">
+                    </div>
+                </div>
+
+                <!-- ASSET DELIVERY -->
+                <div class="form-section">
+                    <h3>Asset Delivery</h3>
+                    <div class="form-group">
+                        <label>Do you require source files? (HTML, CSS, JS, design files, PSD, AI)</label>
+                        <div class="service-selector">
+                            <label class="service-option">
+                                <input type="radio" name="sourceFiles" value="no" data-source-fee="0" checked>
+                                <span class="service-name">No</span>
+                            </label>
+                            <label class="service-option">
+                                <input type="radio" name="sourceFiles" value="yes" data-source-fee="100">
+                                <span class="service-name">Yes (+€100)</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="deadline">Preferred deadline</label>
+                        <input type="date" id="deadline" name="deadline" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="termsAgreement" name="termsAgreement" value="agreed" required>
+                                <label for="termsAgreement">I understand that complex designs, multiple revisions beyond the initial concept phase, and tight deadlines may incur additional costs.</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRICE SUMMARY -->
+                <div class="form-section" id="priceSummarySection">
+                    <h3>Estimated Total</h3>
+                    <div id="priceBreakdown" class="form-group"></div>
+                    <div id="totalEstimateDisplay" style="text-align: right; font-size: var(--xl); font-weight: bold;"></div>
+                    <span class="form-note">*Final price confirmed after consultation. Additional pages pricing based on quantity.</span>
+                </div>
+
+                <div class="form-submit">
+                    <button type="submit" class="btn">Submit Form</button>
+                    <p class="ps" style="margin-top: var(--sm);">Thank you for filling this out! Keep an eye out on your email (even spam) for a response within 5 business days!</p>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="/scripts/forms.js"></script>
+</body>
+</html>
