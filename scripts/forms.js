@@ -318,7 +318,7 @@ function initCharacterArtForm() {
                 </div>
                 <div id="charBgColorField_${charId}" style="display:none;">
                     <div class="form-group">
-                        <label for="charBgColor_${charId}">Background color (if simple gradient selected)</label>
+                        <label for="charBgColor_${charId}">Background color</label>
                         <input type="text" id="charBgColor_${charId}" name="character_${charId}_bgColor" class="form-input" placeholder="e.g., #1a1a2e, dark blue, purple gradient">
                     </div>
                 </div>
